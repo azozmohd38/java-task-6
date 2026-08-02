@@ -1,0 +1,60 @@
+import java.util.HashSet;
+import java.util.Scanner;
+
+public class StudentSetManager {
+    public static void main(String[] args) {
+
+        // Create Scanner object to read user input
+        Scanner scanner = new Scanner(System.in);
+
+        // Declare variables needed for the program
+        int numberOfStudents;
+        int totalIdsEntered = 0;
+        String studentId;
+        String registrationClassification;
+
+        // Create HashSet to store unique student IDs
+        HashSet<String> studentIds = new HashSet<>();
+
+        // Prompt user to enter the number of student IDs
+        System.out.print("Enter the number of student IDs to register: ");
+        numberOfStudents = scanner.nextInt();
+
+        // Validate the entered number of students
+        if (numberOfStudents <= 0) {
+            System.out.println("Invalid number of students.");
+        } else {
+
+            // Use a loop to read and store student IDs
+            for (int i = 0; i < numberOfStudents; i++) {
+                System.out.print("Enter student ID: ");
+                studentId = scanner.next();
+
+                totalIdsEntered++;
+
+                // Add ID to HashSet and check for duplicates
+                if (!studentIds.add(studentId)) {
+                    System.out.println("Duplicate ID detected. ID was not added.");
+                }
+            }
+
+            // Classify registration based on number of unique IDs
+            if (studentIds.size() < 5) {
+                registrationClassification = "Small Registration";
+            } else if (studentIds.size() <= 10) {
+                registrationClassification = "Medium Registration";
+            } else {
+                registrationClassification = "Large Registration";
+            }
+
+            // Display registration results
+            System.out.println("Total IDs entered: " + totalIdsEntered);
+            System.out.println("Total unique student IDs: " + studentIds.size());
+            System.out.println("All unique student IDs: " + studentIds);
+            System.out.println("Registration classification: " + registrationClassification);
+        }
+
+        // Close Scanner before program ends
+        scanner.close();
+    }
+}

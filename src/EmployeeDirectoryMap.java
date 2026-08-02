@@ -1,0 +1,80 @@
+import java.util.HashMap;
+import java.util.Scanner;
+
+public class EmployeeDirectoryMap {
+    public static void main(String[] args) {
+
+        // Create Scanner object to read user input
+        Scanner scanner = new Scanner(System.in);
+
+        // Declare variables required for the program
+        int numberOfEmployees;
+        int totalRecordsEntered = 0;
+        int employeeId;
+        int searchEmployeeId;
+        String employeeName;
+        String searchResult;
+        String companyClassification;
+
+        // Create HashMap to store employee IDs and names
+        HashMap<Integer, String> employeeDirectory = new HashMap<>();
+
+        // Prompt user to enter the number of employees
+        System.out.print("Enter the number of employees: ");
+        numberOfEmployees = scanner.nextInt();
+
+        // Validate the entered number of employees
+        if (numberOfEmployees <= 0) {
+            System.out.println("Invalid number of employees.");
+        } else {
+
+            // Use a loop to read employee IDs and names
+            for (int i = 0; i < numberOfEmployees; i++) {
+                System.out.print("Enter employee ID: ");
+                employeeId = scanner.nextInt();
+
+                System.out.print("Enter employee name: ");
+                employeeName = scanner.next();
+
+                totalRecordsEntered++;
+
+                // Check if employee ID already exists before adding
+                if (employeeDirectory.containsKey(employeeId)) {
+                    System.out.println("Employee ID already exists. Please enter a unique ID.");
+                } else {
+                    employeeDirectory.put(employeeId, employeeName);
+                }
+            }
+
+            // Prompt user to search for an employee ID
+            System.out.print("Enter employee ID to search: ");
+            searchEmployeeId = scanner.nextInt();
+
+            // Search employee using containsKey() method
+            if (employeeDirectory.containsKey(searchEmployeeId)) {
+                searchResult = "Employee Found: " + employeeDirectory.get(searchEmployeeId);
+            } else {
+                searchResult = "Employee ID not found.";
+            }
+
+            // Classify company size based on unique employees
+            if (employeeDirectory.size() < 5) {
+                companyClassification = "Small Company";
+            } else if (employeeDirectory.size() <= 10) {
+                companyClassification = "Medium Company";
+            } else {
+                companyClassification = "Large Company";
+            }
+
+            // Display employee directory information
+            System.out.println("Total employee records entered: " + totalRecordsEntered);
+            System.out.println("Total unique employees: " + employeeDirectory.size());
+            System.out.println("All employee IDs and names: " + employeeDirectory);
+            System.out.println("Search result: " + searchResult);
+            System.out.println("Company classification: " + companyClassification);
+        }
+
+        // Close Scanner before program ends
+        scanner.close();
+    }
+}
