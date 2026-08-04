@@ -1,230 +1,345 @@
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Scanner;
-import java.util.TreeMap;
+import java.util.*;
 
 public class UniversityCourseRegistrationSystem {
+
     public static void main(String[] args) {
 
-        // Create Scanner object for user input
+        // Create Scanner object
         Scanner scanner = new Scanner(System.in);
 
-        // Declare variables required for the program
-        int numberOfStudents;
-        int studentId;
-        int numberOfCourses;
-        int menuChoice;
-        int searchStudentId;
-        int courseCount;
-        String courseName;
-        String studentCoursesResult;
-
-        // Create HashSet to store unique student IDs
+        // Store unique student IDs
         HashSet<Integer> studentIds = new HashSet<>();
 
-        // Create HashMap to store student IDs and their course sets
+        // Store student ID and registered courses
         HashMap<Integer, HashSet<String>> studentCourses = new HashMap<>();
 
-        // Prompt user to enter number of students
-        System.out.print("Enter the number of students: ");
-        numberOfStudents = scanner.nextInt();
+        // Ask for number of students
+        System.out.print("Enter number of students: ");
+        int numberOfStudents = scanner.nextInt();
+        scanner.nextLine();
 
+        // Validate number of students
         // Validate number of students
         if (numberOfStudents <= 0) {
             System.out.println("Invalid number of students.");
-        } else {
+            scanner.close();
+            return;
+        }
 
-            // Enter student records
-            for (int i = 0; i < numberOfStudents; i++) {
+        // Enter student records
+        for (int i = 1; i <= numberOfStudents; i++) {
 
-                System.out.print("Enter student ID: ");
-                studentId = scanner.nextInt();
+            System.out.println("\nStudent " + i);
 
-                // Check if student ID already exists
-                if (studentIds.contains(studentId)) {
-                    System.out.println("Student ID already exists. Record skipped.");
+            System.out.print("Enter Student ID: ");
+            int studentId = scanner.nextInt();
+            scanner.nextLine();
+
+            // Validate positive student ID
+            if (studentId <= 0) {
+                System.out.println("Invalid Student ID. Student ID must be a positive number.");
+                continue;
+            }
+
+            // Check duplicate student ID
+            if (studentIds.contains(studentId)) {
+                System.out.println("Student ID already exists. Record skipped.");
+                continue;
+            }
+
+            // Add student ID
+            studentIds.add(studentId);
+
+            System.out.print("Enter number of courses: ");
+            int numberOfCourses = scanner.nextInt();
+            scanner.nextLine();
+
+            HashSet<String> courses = new HashSet<>();
+
+            // Read courses
+            for (int j = 1; j <= numberOfCourses; j++) {
+
+                if (courses.size() >= 6) {
+                    System.out.println("Maximum of 6 courses allowed.");
+                    break;
+                }
+
+                System.out.print("Enter course " + j + ": ");
+                String course = scanner.nextLine();
+
+                if (courses.add(course)) {
+                    System.out.println("Course added.");
                 } else {
+                    System.out.println("Duplicate course. Not added.");
+                }
+            }
 
-                    // Add student ID to Set
-                    studentIds.add(studentId);
+            // Save student courses
+            studentCourses.put(studentId, courses);
+        }
 
-                    // Create Set for student courses
-                    HashSet<String> courses = new HashSet<>();
+        int choice;
 
-                    System.out.print("Enter number of courses: ");
-                    numberOfCourses = scanner.nextInt();
+        // Menu
+        do {
 
-                    // Enter courses for student
-                    for (int j = 0; j < numberOfCourses; j++) {
+            System.out.println("\n==============================");
+            System.out.println("University Registration System");
+            System.out.println("==============================");
+            System.out.println("1. Search Student");
+            System.out.println("2. Add Course to Student");
+            System.out.println("3. Remove Course from Student");
+            System.out.println("4. Display All Students");
+            System.out.println("5. Display Registration Statistics");
+            System.out.println("6. Register New Student");
+            System.out.println("7. Display Students in a Course");
+            System.out.println("8. Exit");
 
-                        System.out.print("Enter course name: ");
-                        courseName = scanner.next();
+            System.out.print("Enter your choice: ");
+            choice = scanner.nextInt();
+            scanner.nextLine();
 
-                        if (!courses.add(courseName)) {
-                            System.out.println("Duplicate course. Course not added.");
+            switch (choice) {
+
+                // Search Student
+                case 1:
+
+                    System.out.print("Enter Student ID: ");
+                    int searchId = scanner.nextInt();
+                    scanner.nextLine();
+
+                    if (studentCourses.containsKey(searchId)) {
+                        System.out.println("Registered Courses:");
+                        System.out.println(studentCourses.get(searchId));
+                    } else {
+                        System.out.println("Student not found.");
+                    }
+
+                    break;
+
+                // Add Course
+                case 2:
+
+                    System.out.print("Enter Student ID: ");
+                    int addId = scanner.nextInt();
+                    scanner.nextLine();
+
+                    if (studentCourses.containsKey(addId)) {
+
+                        HashSet<String> courses = studentCourses.get(addId);
+
+                        if (courses.size() >= 6) {
+                            System.out.println("Student already has maximum (6) courses.");
+                            break;
+                        }
+
+                        System.out.print("Enter Course Name: ");
+                        String newCourse = scanner.nextLine();
+
+                        if (courses.contains(newCourse)) {
+                            System.out.println("Duplicate course registration.");
+                        } else {
+                            courses.add(newCourse);
+                            studentCourses.replace(addId, courses);
+                            System.out.println("Course added successfully.");
+                        }
+
+                    } else {
+                        System.out.println("Student not found.");
+                    }
+
+                    break;
+
+                // Remove Course
+                case 3:
+
+                    System.out.print("Enter Student ID: ");
+                    int removeId = scanner.nextInt();
+                    scanner.nextLine();
+
+                    if (studentCourses.containsKey(removeId)) {
+
+                        System.out.print("Enter Course Name: ");
+                        String removeCourse = scanner.nextLine();
+
+                        HashSet<String> courses = studentCourses.get(removeId);
+
+                        if (courses.remove(removeCourse)) {
+                            studentCourses.replace(removeId, courses);
+                            System.out.println("Course removed successfully.");
+                        } else {
+                            System.out.println("Course not found.");
+                        }
+
+                    } else {
+                        System.out.println("Student not found.");
+                    }
+
+                    break;
+
+                // Display All Students
+                case 4:
+
+                    if (studentCourses.isEmpty()) {
+                        System.out.println("No students found.");
+                    } else {
+
+                        TreeSet<Integer> sortedIds = new TreeSet<>(studentCourses.keySet());
+
+                        System.out.println("\nAll Students");
+
+                        for (Integer id : sortedIds) {
+                            System.out.println("Student ID: " + id);
+                            System.out.println("Courses: " + studentCourses.get(id));
+                            System.out.println();
                         }
                     }
 
-                    // Store student courses in Map
-                    studentCourses.put(studentId, courses);
-                }
+                    break;
+
+                // Statistics
+                case 5:
+
+                    int totalStudents = studentCourses.size();
+                    int totalCourseRegistrations = 0;
+
+                    int highestStudent = -1;
+                    int lowestStudent = -1;
+
+                    int highestCourses = Integer.MIN_VALUE;
+                    int lowestCourses = Integer.MAX_VALUE;
+
+                    for (Integer id : studentCourses.keySet()) {
+
+                        int count = studentCourses.get(id).size();
+
+                        totalCourseRegistrations += count;
+
+                        if (count > highestCourses) {
+                            highestCourses = count;
+                            highestStudent = id;
+                        }
+
+                        if (count < lowestCourses) {
+                            lowestCourses = count;
+                            lowestStudent = id;
+                        }
+                    }
+
+                    double average = 0;
+
+                    if (totalStudents > 0) {
+                        average = (double) totalCourseRegistrations / totalStudents;
+                    }
+
+                    System.out.println("\nRegistration Statistics");
+                    System.out.println("----------------------------");
+                    System.out.println("Total Students: " + totalStudents);
+                    System.out.println("Total Course Registrations: " + totalCourseRegistrations);
+
+                    if (totalStudents > 0) {
+                        System.out.println("Student with Highest Courses: " + highestStudent);
+                        System.out.println("Student with Lowest Courses: " + lowestStudent);
+                    }
+
+                    System.out.printf("Average Courses per Student: %.2f%n", average);
+
+                    break;
+
+                // Register New Student
+                case 6:
+
+                    System.out.print("Enter Student ID: ");
+                    int newId = scanner.nextInt();
+                    scanner.nextLine();
+
+                    // Validate positive student ID
+                    if (newId <= 0) {
+                        System.out.println("Invalid Student ID. Student ID must be a positive number.");
+                    } else if (studentIds.contains(newId)) {
+                        System.out.println("Student ID already exists.");
+                    } else {
+
+                        studentIds.add(newId);
+
+                        System.out.print("Enter number of courses: ");
+                        int numCourses = scanner.nextInt();
+                        scanner.nextLine();
+
+                        HashSet<String> newCourses = new HashSet<>();
+
+                        for (int i = 1; i <= numCourses; i++) {
+
+                            if (newCourses.size() >= 6) {
+                                System.out.println("Maximum of 6 courses allowed.");
+                                break;
+                            }
+
+                            System.out.print("Enter course " + i + ": ");
+                            String course = scanner.nextLine();
+
+                            if (newCourses.add(course)) {
+                                System.out.println("Course added.");
+                            } else {
+                                System.out.println("Duplicate course.");
+                            }
+                        }
+
+                        studentCourses.put(newId, newCourses);
+                        System.out.println("Student registered successfully.");
+                    }
+
+                    break;
+
+                // Display students registered in a course
+                case 7:
+
+                    System.out.print("Enter course name: ");
+                    String searchCourse = scanner.nextLine();
+
+                    boolean found = false;
+
+                    System.out.println("Students registered in " + searchCourse + ":");
+
+                    TreeSet<Integer> ids = new TreeSet<>(studentCourses.keySet());
+
+                    for (Integer id : ids) {
+
+                        if (studentCourses.get(id).contains(searchCourse)) {
+                            System.out.println(id);
+                            found = true;
+                        }
+                    }
+
+                    if (!found) {
+                        System.out.println("No students found.");
+                    }
+
+                    break;
+
+                // Exit
+                case 8:
+                    System.out.println("Exiting program...");
+                    break;
+
+                default:
+                    System.out.println("Invalid choice.");
             }
 
-            // Menu loop
-            do {
+        } while (choice != 8);
 
-                System.out.println("\n===== University Course Registration Menu =====");
-                System.out.println("1. Search Student");
-                System.out.println("2. Add Course to Student");
-                System.out.println("3. Remove Course from Student");
-                System.out.println("4. Display All Students");
-                System.out.println("5. Display Registration Statistics");
-                System.out.println("6. Exit");
-                System.out.print("Enter your choice: ");
+        // Display complete registration summary
+        System.out.println("\n========== REGISTRATION SUMMARY ==========");
 
-                menuChoice = scanner.nextInt();
+        TreeSet<Integer> summaryIds = new TreeSet<>(studentCourses.keySet());
 
-                // Handle menu options using switch-case
-                switch (menuChoice) {
-
-                    case 1:
-                        // Search student option
-                        System.out.print("Enter student ID to search: ");
-                        searchStudentId = scanner.nextInt();
-
-                        if (studentCourses.containsKey(searchStudentId)) {
-                            System.out.println("Student ID: " + searchStudentId);
-                            System.out.println("Registered Courses: "
-                                    + studentCourses.get(searchStudentId));
-                        } else {
-                            System.out.println("Student not found.");
-                        }
-                        break;
-
-                    case 2:
-                        // Add course option
-                        System.out.print("Enter student ID: ");
-                        searchStudentId = scanner.nextInt();
-
-                        if (studentCourses.containsKey(searchStudentId)) {
-
-                            System.out.print("Enter course name: ");
-                            courseName = scanner.next();
-
-                            HashSet<String> courses =
-                                    studentCourses.get(searchStudentId);
-
-                            if (courses.add(courseName)) {
-                                studentCourses.replace(searchStudentId, courses);
-                                System.out.println("Course added successfully.");
-                            } else {
-                                System.out.println(
-                                        "Course already registered. Duplicate not allowed.");
-                            }
-
-                        } else {
-                            System.out.println("Student not found.");
-                        }
-                        break;
-
-                    case 3:
-                        // Remove course option
-                        System.out.print("Enter student ID: ");
-                        searchStudentId = scanner.nextInt();
-
-                        if (studentCourses.containsKey(searchStudentId)) {
-
-                            System.out.print("Enter course name to remove: ");
-                            courseName = scanner.next();
-
-                            HashSet<String> courses =
-                                    studentCourses.get(searchStudentId);
-
-                            if (courses.remove(courseName)) {
-                                studentCourses.replace(searchStudentId, courses);
-                                System.out.println("Course removed successfully.");
-                            } else {
-                                System.out.println("Course not found.");
-                            }
-
-                        } else {
-                            System.out.println("Student not found.");
-                        }
-                        break;
-
-                    case 4:
-                        // Display all students option
-                        System.out.println("\nAll Students:");
-
-                        for (Integer id : studentCourses.keySet()) {
-                            System.out.println("Student ID: " + id);
-                            System.out.println("Courses: "
-                                    + studentCourses.get(id));
-                        }
-                        break;
-
-                    case 5:
-                        // Display registration statistics option
-                        int totalRegistrations = 0;
-                        int highestCourses = -1;
-                        int lowestCourses = Integer.MAX_VALUE;
-                        int highestStudent = 0;
-                        int lowestStudent = 0;
-
-                        for (Integer id : studentCourses.keySet()) {
-
-                            courseCount = studentCourses.get(id).size();
-                            totalRegistrations += courseCount;
-
-                            if (courseCount > highestCourses) {
-                                highestCourses = courseCount;
-                                highestStudent = id;
-                            }
-
-                            if (courseCount < lowestCourses) {
-                                lowestCourses = courseCount;
-                                lowestStudent = id;
-                            }
-                        }
-
-                        double averageCourses =
-                                (double) totalRegistrations / studentCourses.size();
-
-                        System.out.println("\nRegistration Statistics:");
-                        System.out.println("Total number of students: "
-                                + studentIds.size());
-                        System.out.println("Total course registrations: "
-                                + totalRegistrations);
-                        System.out.println("Student with highest courses: "
-                                + highestStudent);
-                        System.out.println("Student with lowest courses: "
-                                + lowestStudent);
-                        System.out.println("Average courses per student: "
-                                + averageCourses);
-
-                        break;
-
-                    case 6:
-                        // Exit option
-                        System.out.println("Exiting system...");
-                        break;
-
-                    default:
-                        System.out.println("Invalid choice.");
-                }
-
-            } while (menuChoice != 6);
-
-            // Display final registration summary
-            System.out.println("\n===== Final Registration Summary =====");
-
-            for (Integer id : studentCourses.keySet()) {
-                System.out.println("Student ID: " + id
-                        + " Courses: " + studentCourses.get(id));
-            }
+        for (Integer id : summaryIds) {
+            System.out.println("Student ID: " + id);
+            System.out.println("Courses: " + studentCourses.get(id));
+            System.out.println("------------------------------------------");
         }
 
-        // Close Scanner before program ends
+        // Close Scanner
         scanner.close();
     }
 }
