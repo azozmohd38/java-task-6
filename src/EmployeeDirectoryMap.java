@@ -84,10 +84,12 @@ public class EmployeeDirectoryMap {
                 searchResult = "Employee ID not found.";
             }
 
+            int uniqueEmployeeCount = employeeDirectory.size();
+
             // Classify company size based on unique employees
-            if (employeeDirectory.size() < 5) {
+            if (uniqueEmployeeCount < 5) {
                 companyClassification = "Small Company";
-            } else if (employeeDirectory.size() <= 10) {
+            } else if (uniqueEmployeeCount <= 10) {
                 companyClassification = "Medium Company";
             } else {
                 companyClassification = "Large Company";
