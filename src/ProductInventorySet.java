@@ -59,7 +59,9 @@ public class ProductInventorySet {
             searchProduct = input.nextLine().trim();
 
             // Check whether the product exists using contains()
-            if (productInventory.contains(searchProduct)) {
+            if (searchProduct.isEmpty()) {
+                searchResult = "Product not found in inventory.";
+            } else if (productInventory.contains(searchProduct)) {
                 searchResult = "Product found in inventory.";
             } else {
                 searchResult = "Product not found in inventory.";
