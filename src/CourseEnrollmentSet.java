@@ -37,7 +37,7 @@ public class CourseEnrollmentSet {
             // Use a loop to read and store course names
             for (int i = 0; i < numberOfCourses; i++) {
                 System.out.print("Enter course name: ");
-                courseName = input.next();
+                courseName = input.nextLine().trim();
 
                 totalCoursesEntered++;
 
