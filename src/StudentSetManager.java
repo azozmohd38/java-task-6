@@ -50,10 +50,12 @@ public class StudentSetManager {
                 }
             }
 
+            int uniqueStudentCount = studentIds.size();
+
             // Classify registration based on number of unique IDs
-            if (studentIds.size() < 5) {
+            if (uniqueStudentCount < 5) {
                 registrationClassification = "Small Registration";
-            } else if (studentIds.size() <= 10) {
+            } else if (uniqueStudentCount <= 10) {
                 registrationClassification = "Medium Registration";
             } else {
                 registrationClassification = "Large Registration";
