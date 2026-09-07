@@ -5,7 +5,7 @@ public class ProductPriceCatalog {
     public static void main(String[] args) {
 
         // Create Scanner object to read user input
-        Scanner scanner = new Scanner(System.in);
+        Scanner input = new Scanner(System.in);
 
         // Declare variables required for the program
         int numberOfProducts;
@@ -23,7 +23,7 @@ public class ProductPriceCatalog {
 
         // Prompt user to enter the number of products
         System.out.print("Enter the number of products: ");
-        numberOfProducts = scanner.nextInt();
+        numberOfProducts = input.nextInt();
 
         // Validate the entered number of products
         if (numberOfProducts <= 0) {
@@ -33,10 +33,10 @@ public class ProductPriceCatalog {
             // Use a loop to read product names and prices
             for (int i = 0; i < numberOfProducts; i++) {
                 System.out.print("Enter product name: ");
-                productName = scanner.next();
+                productName = input.next();
 
                 System.out.print("Enter product price: ");
-                productPrice = scanner.nextDouble();
+                productPrice = input.nextDouble();
 
                 totalProductsEntered++;
 
@@ -50,7 +50,7 @@ public class ProductPriceCatalog {
 
             // Prompt user to search for a product
             System.out.print("Enter product name to search: ");
-            searchProduct = scanner.next();
+            searchProduct = input.next();
 
             // Search product and update price if required
             if (productCatalog.containsKey(searchProduct)) {
@@ -58,11 +58,11 @@ public class ProductPriceCatalog {
                 System.out.println("Current price: " + productCatalog.get(searchProduct));
 
                 System.out.print("Do you want to update the price? (Y/N): ");
-                updateChoice = scanner.next();
+                updateChoice = input.next();
 
                 if (updateChoice.equalsIgnoreCase("Y")) {
                     System.out.print("Enter new price: ");
-                    newPrice = scanner.nextDouble();
+                    newPrice = input.nextDouble();
 
                     // Update product price using replace()
                     productCatalog.replace(searchProduct, newPrice);
@@ -94,6 +94,6 @@ public class ProductPriceCatalog {
         }
 
         // Close Scanner before program ends
-        scanner.close();
+        input.close();
     }
 }
