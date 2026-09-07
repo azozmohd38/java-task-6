@@ -84,7 +84,7 @@ public class ProductPriceCatalog {
                 System.out.println("Current price: " + productCatalog.get(searchProduct));
 
                 System.out.print("Do you want to update the price? (Y/N): ");
-                updateChoice = input.next();
+                updateChoice = input.nextLine().trim();
 
                 if (updateChoice.equalsIgnoreCase("Y")) {
                     System.out.print("Enter new price: ");
