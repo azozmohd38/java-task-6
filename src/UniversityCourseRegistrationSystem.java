@@ -135,6 +135,12 @@ public class UniversityCourseRegistrationSystem {
                 case 1:
 
                     System.out.print("Enter Student ID: ");
+                    while (!scanner.hasNextInt()) {
+                        System.out.println("Student not found.");
+                        scanner.next();
+                        System.out.print("Enter Student ID: ");
+                    }
+
                     int searchId = scanner.nextInt();
                     scanner.nextLine();
 
