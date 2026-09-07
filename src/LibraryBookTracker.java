@@ -105,8 +105,10 @@ public class LibraryBookTracker {
             }
 
             // Display library information
+            System.out.println("\n===== Library Book Summary =====");
             System.out.println("Total book records entered: " + totalBookRecordsEntered);
-            System.out.println("Total unique books: " + bookIds.size());
+            System.out.println("Total unique books: " + uniqueBookCount);
+            System.out.println("Duplicate book IDs: " + duplicateBookIds);
             System.out.println("All book IDs: " + bookIds);
             System.out.println("All book IDs with their corresponding titles: " + bookCatalog);
             System.out.println("Search result:\n" + searchResult);
