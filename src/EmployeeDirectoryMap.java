@@ -100,7 +100,10 @@ public class EmployeeDirectoryMap {
             System.out.println("Total employee records entered: " + totalRecordsEntered);
             System.out.println("Total unique employees: " + uniqueEmployeeCount);
             System.out.println("Duplicate employee IDs: " + duplicateEmployeeIds);
-            System.out.println("All employee IDs and names: " + employeeDirectory);
+            System.out.println("All employee IDs and names:");
+            for (int id : employeeDirectory.keySet()) {
+                System.out.println(id + " - " + employeeDirectory.get(id));
+            }
             System.out.println("Search result: " + searchResult);
             System.out.println("Company classification: " + companyClassification);
         }
