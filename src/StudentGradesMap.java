@@ -109,7 +109,7 @@ public class StudentGradesMap {
                     totalGrades += grade;
                 }
 
-                averageGrade = totalGrades / studentGrades.size();
+                averageGrade = studentGrades.isEmpty() ? 0 : totalGrades / studentGrades.size();
 
                 // Classify class performance based on average grade
                 if (averageGrade < 60) {
