@@ -211,7 +211,7 @@ public class EmployeeSalaryManager {
                             System.out.println("\nSalary Statistics:");
                             System.out.println("Highest Salary: " + highestSalary);
                             System.out.println("Lowest Salary: " + lowestSalary);
-                            System.out.println("Average Salary: " + averageSalary);
+                            System.out.printf("Average Salary: %.2f%n", averageSalary);
                             System.out.println("Total Payroll: " + totalPayroll);
 
                         } else {
