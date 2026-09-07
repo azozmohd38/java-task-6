@@ -91,7 +91,6 @@ public class CourseEnrollmentSet {
             System.out.println("Course catalog classification: " + catalogClassification);
         }
 
-        // Close Scanner before program ends
         input.close();
     }
 }
