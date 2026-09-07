@@ -37,7 +37,7 @@ public class ProductInventorySet {
             // Use a loop to read and store product names
             for (int i = 0; i < numberOfProducts; i++) {
                 System.out.print("Enter product name: ");
-                productName = input.next();
+                productName = input.nextLine().trim();
 
                 totalProductsEntered++;
 
