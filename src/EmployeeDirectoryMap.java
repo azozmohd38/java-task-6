@@ -5,7 +5,7 @@ public class EmployeeDirectoryMap {
     public static void main(String[] args) {
 
         // Create Scanner object to read user input
-        Scanner scanner = new Scanner(System.in);
+        Scanner input = new Scanner(System.in);
 
         // Declare variables required for the program
         int numberOfEmployees;
@@ -21,7 +21,7 @@ public class EmployeeDirectoryMap {
 
         // Prompt user to enter the number of employees
         System.out.print("Enter the number of employees: ");
-        numberOfEmployees = scanner.nextInt();
+        numberOfEmployees = input.nextInt();
 
         // Validate the entered number of employees
         if (numberOfEmployees <= 0) {
@@ -31,10 +31,10 @@ public class EmployeeDirectoryMap {
             // Use a loop to read employee IDs and names
             for (int i = 0; i < numberOfEmployees; i++) {
                 System.out.print("Enter employee ID: ");
-                employeeId = scanner.nextInt();
+                employeeId = input.nextInt();
 
                 System.out.print("Enter employee name: ");
-                employeeName = scanner.next();
+                employeeName = input.next();
 
                 totalRecordsEntered++;
 
@@ -48,7 +48,7 @@ public class EmployeeDirectoryMap {
 
             // Prompt user to search for an employee ID
             System.out.print("Enter employee ID to search: ");
-            searchEmployeeId = scanner.nextInt();
+            searchEmployeeId = input.nextInt();
 
             // Search employee using containsKey() method
             if (employeeDirectory.containsKey(searchEmployeeId)) {
@@ -75,6 +75,6 @@ public class EmployeeDirectoryMap {
         }
 
         // Close Scanner before program ends
-        scanner.close();
+        input.close();
     }
 }
