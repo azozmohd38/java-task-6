@@ -6,7 +6,7 @@ public class StudentAttendanceManager {
     public static void main(String[] args) {
 
         // Create Scanner object for user input
-        Scanner scanner = new Scanner(System.in);
+        Scanner input = new Scanner(System.in);
 
         // Declare variables required for the program
         int numberOfStudents;
@@ -27,7 +27,7 @@ public class StudentAttendanceManager {
 
         // Prompt user to enter the number of student records
         System.out.print("Enter the number of student records: ");
-        numberOfStudents = scanner.nextInt();
+        numberOfStudents = input.nextInt();
 
         // Check if number of students is valid
         if (numberOfStudents <= 0) {
@@ -38,10 +38,10 @@ public class StudentAttendanceManager {
             for (int i = 0; i < numberOfStudents; i++) {
 
                 System.out.print("Enter student ID: ");
-                studentId = scanner.nextInt();
+                studentId = input.nextInt();
 
                 System.out.print("Enter number of attended days: ");
-                attendedDays = scanner.nextInt();
+                attendedDays = input.nextInt();
 
                 // Check for duplicate student IDs
                 if (attendanceRecords.containsKey(studentId)) {
@@ -64,7 +64,7 @@ public class StudentAttendanceManager {
                 System.out.println("7. Exit");
                 System.out.print("Enter your choice: ");
 
-                menuChoice = scanner.nextInt();
+                menuChoice = input.nextInt();
 
                 // Process menu options using switch-case
                 switch (menuChoice) {
@@ -72,13 +72,13 @@ public class StudentAttendanceManager {
                     case 1:
                         // Add new student record
                         System.out.print("Enter student ID: ");
-                        studentId = scanner.nextInt();
+                        studentId = input.nextInt();
 
                         if (attendanceRecords.containsKey(studentId)) {
                             System.out.println("Student ID already exists. Record not added.");
                         } else {
                             System.out.print("Enter attended days: ");
-                            attendedDays = scanner.nextInt();
+                            attendedDays = input.nextInt();
 
                             attendanceRecords.put(studentId, attendedDays);
 
@@ -89,7 +89,7 @@ public class StudentAttendanceManager {
                     case 2:
                         // Search student attendance
                         System.out.print("Enter student ID to search: ");
-                        searchStudentId = scanner.nextInt();
+                        searchStudentId = input.nextInt();
 
                         if (attendanceRecords.containsKey(searchStudentId)) {
                             System.out.println("Student ID: " + searchStudentId);
@@ -103,12 +103,12 @@ public class StudentAttendanceManager {
                     case 3:
                         // Update attendance using replace()
                         System.out.print("Enter student ID to update: ");
-                        searchStudentId = scanner.nextInt();
+                        searchStudentId = input.nextInt();
 
                         if (attendanceRecords.containsKey(searchStudentId)) {
 
                             System.out.print("Enter new attendance days: ");
-                            newAttendanceDays = scanner.nextInt();
+                            newAttendanceDays = input.nextInt();
 
                             attendanceRecords.replace(searchStudentId, newAttendanceDays);
 
@@ -122,7 +122,7 @@ public class StudentAttendanceManager {
                     case 4:
                         // Remove student record using remove()
                         System.out.print("Enter student ID to remove: ");
-                        searchStudentId = scanner.nextInt();
+                        searchStudentId = input.nextInt();
 
                         if (attendanceRecords.remove(searchStudentId) != null) {
                             System.out.println("Student record removed successfully.");
@@ -206,6 +206,6 @@ public class StudentAttendanceManager {
         }
 
         // Close Scanner before program ends
-        scanner.close();
+        input.close();
     }
 }
