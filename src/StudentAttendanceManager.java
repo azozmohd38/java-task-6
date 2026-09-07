@@ -61,6 +61,11 @@ public class StudentAttendanceManager {
 
                 attendedDays = input.nextInt();
 
+                if (attendedDays < 0) {
+                    System.out.println("Attendance days cannot be negative.");
+                    continue;
+                }
+
                 // Check for duplicate student IDs
                 if (attendanceRecords.containsKey(studentId)) {
                     System.out.println("Student ID already exists. Record not added.");
