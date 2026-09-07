@@ -19,7 +19,6 @@ public class UniversityCourseRegistrationSystem {
         scanner.nextLine();
 
         // Validate number of students
-        // Validate number of students
         if (numberOfStudents <= 0) {
             System.out.println("Invalid number of students.");
             scanner.close();
