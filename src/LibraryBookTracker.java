@@ -43,7 +43,14 @@ public class LibraryBookTracker {
             for (int i = 0; i < numberOfBooks; i++) {
 
                 System.out.print("Enter book ID: ");
+                while (!input.hasNextInt()) {
+                    System.out.println("Book ID must be a number.");
+                    input.next();
+                    System.out.print("Enter book ID: ");
+                }
+
                 bookId = input.nextInt();
+                input.nextLine();
 
                 System.out.print("Enter book title: ");
                 bookTitle = input.next();
