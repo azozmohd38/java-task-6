@@ -59,7 +59,9 @@ public class CityDirectorySet {
             searchCity = input.nextLine().trim();
 
             // Check whether the city exists using contains()
-            if (cityDirectory.contains(searchCity)) {
+            if (searchCity.isEmpty()) {
+                searchResult = "City not found in the directory.";
+            } else if (cityDirectory.contains(searchCity)) {
                 searchResult = "City found in the directory.";
             } else {
                 searchResult = "City not found in the directory.";
