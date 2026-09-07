@@ -93,10 +93,12 @@ public class LibraryBookTracker {
                 searchResult = "Book not found.";
             }
 
+            int uniqueBookCount = bookCatalog.size();
+
             // Classify library size based on number of unique books
-            if (bookCatalog.size() < 5) {
+            if (uniqueBookCount < 5) {
                 libraryClassification = "Small Library";
-            } else if (bookCatalog.size() <= 10) {
+            } else if (uniqueBookCount <= 10) {
                 libraryClassification = "Medium Library";
             } else {
                 libraryClassification = "Large Library";
