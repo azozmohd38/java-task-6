@@ -364,7 +364,7 @@ public class UniversityCourseRegistrationSystem {
 
                 // Exit
                 case 8:
-                    System.out.println("Exiting program...");
+                    System.out.println("Program terminated.");
                     break;
 
                 default:
@@ -384,7 +384,6 @@ public class UniversityCourseRegistrationSystem {
             System.out.println("------------------------------------------");
         }
 
-        // Close Scanner
         scanner.close();
     }
 }
