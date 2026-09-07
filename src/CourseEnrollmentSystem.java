@@ -78,7 +78,14 @@ public class CourseEnrollmentSystem {
 
             // Prompt user to enter student ID for course update
             System.out.print("Enter student ID to update course: ");
+            while (!input.hasNextInt()) {
+                System.out.println("Student ID not found.");
+                input.next();
+                System.out.print("Enter student ID to update course: ");
+            }
+
             updateStudentId = input.nextInt();
+            input.nextLine();
 
             // Check if student ID exists and update course
             if (studentCourses.containsKey(updateStudentId)) {
