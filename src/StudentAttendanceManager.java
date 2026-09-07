@@ -107,11 +107,20 @@ public class StudentAttendanceManager {
                             System.out.println("Student ID already exists. Record not added.");
                         } else {
                             System.out.print("Enter attended days: ");
+                            while (!input.hasNextInt()) {
+                                System.out.println("Attendance days must be a number.");
+                                input.next();
+                                System.out.print("Enter attended days: ");
+                            }
+
                             attendedDays = input.nextInt();
 
-                            attendanceRecords.put(studentId, attendedDays);
-
-                            System.out.println("Student record added successfully.");
+                            if (attendedDays < 0) {
+                                System.out.println("Attendance days cannot be negative.");
+                            } else {
+                                attendanceRecords.put(studentId, attendedDays);
+                                System.out.println("Student record added successfully.");
+                            }
                         }
                         break;
 
