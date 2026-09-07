@@ -120,6 +120,12 @@ public class UniversityCourseRegistrationSystem {
             System.out.println("8. Exit");
 
             System.out.print("Enter your choice: ");
+            while (!scanner.hasNextInt()) {
+                System.out.println("Invalid choice.");
+                scanner.next();
+                System.out.print("Enter your choice: ");
+            }
+
             choice = scanner.nextInt();
             scanner.nextLine();
 
