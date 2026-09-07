@@ -83,7 +83,10 @@ public class CityDirectorySet {
             System.out.println("Total cities entered: " + totalCitiesEntered);
             System.out.println("Total unique cities: " + uniqueCityCount);
             System.out.println("Duplicate cities: " + duplicateCities);
-            System.out.println("All cities in alphabetical order: " + cityDirectory);
+            System.out.println("All cities in alphabetical order:");
+            for (String city : cityDirectory) {
+                System.out.println(city);
+            }
             System.out.println("Search result: " + searchResult);
             System.out.println("Directory classification: " + directoryClassification);
         }
