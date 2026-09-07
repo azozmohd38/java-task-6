@@ -67,10 +67,12 @@ public class CityDirectorySet {
                 searchResult = "City not found in the directory.";
             }
 
+            int uniqueCityCount = cityDirectory.size();
+
             // Classify directory size based on unique cities
-            if (cityDirectory.size() < 5) {
+            if (uniqueCityCount < 5) {
                 directoryClassification = "Small Directory";
-            } else if (cityDirectory.size() <= 10) {
+            } else if (uniqueCityCount <= 10) {
                 directoryClassification = "Medium Directory";
             } else {
                 directoryClassification = "Large Directory";
