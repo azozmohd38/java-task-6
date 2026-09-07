@@ -47,6 +47,12 @@ public class StudentGradesMap {
                     studentId = input.nextInt();
 
                     System.out.print("Enter student grade: ");
+                    while (!input.hasNextDouble()) {
+                        System.out.println("Grade must be a number.");
+                        input.next();
+                        System.out.print("Enter student grade: ");
+                    }
+
                     studentGrade = input.nextDouble();
 
                     // Check if student ID already exists before adding
