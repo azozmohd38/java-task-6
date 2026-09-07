@@ -37,6 +37,12 @@ public class UniversityCourseRegistrationSystem {
             System.out.println("\nStudent " + i);
 
             System.out.print("Enter Student ID: ");
+            while (!scanner.hasNextInt()) {
+                System.out.println("Invalid Student ID. Student ID must be a positive number.");
+                scanner.next();
+                System.out.print("Enter Student ID: ");
+            }
+
             int studentId = scanner.nextInt();
             scanner.nextLine();
 
