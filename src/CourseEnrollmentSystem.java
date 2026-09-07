@@ -117,7 +117,10 @@ public class CourseEnrollmentSystem {
             // Display enrollment information
             System.out.println("Total student records entered: " + totalStudentRecordsEntered);
             System.out.println("Total unique students: " + studentIds.size());
-            System.out.println("All student IDs: " + studentIds);
+            System.out.println("All student IDs:");
+            for (int id : studentIds) {
+                System.out.println(id);
+            }
             System.out.println("All student IDs with their enrolled courses: " + studentCourses);
             System.out.println("Update result: " + updateResult);
             System.out.println("Enrollment classification: " + enrollmentClassification);
