@@ -124,7 +124,11 @@ public class ProductPriceCatalog {
             // Display product catalog information
             System.out.println("Total products entered: " + totalProductsEntered);
             System.out.println("Total unique products: " + productCatalog.size());
-            System.out.println("All product names and prices: " + productCatalog);
+            System.out.println("All product names and prices:");
+            for (String name : productCatalog.keySet()) {
+                System.out.println(name + " - " + productCatalog.get(name));
+            }
+            System.out.println("Duplicate products: " + duplicateProducts);
             System.out.println("Search and update result: " + searchUpdateResult);
             System.out.println("Inventory classification: " + inventoryClassification);
         }
