@@ -91,7 +91,6 @@ public class ProductInventorySet {
             System.out.println("Inventory classification: " + inventoryClassification);
         }
 
-        // Close Scanner before program ends
         input.close();
     }
 }
