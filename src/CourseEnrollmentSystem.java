@@ -93,10 +93,13 @@ public class CourseEnrollmentSystem {
                 System.out.print("Enter new course name: ");
                 newCourseName = input.nextLine().trim();
 
-                // Update course using replace() method
-                studentCourses.replace(updateStudentId, newCourseName);
-
-                updateResult = "Course updated successfully.";
+                if (newCourseName.isEmpty()) {
+                    updateResult = "Course name cannot be empty.";
+                } else {
+                    // Update course using replace() method
+                    studentCourses.replace(updateStudentId, newCourseName);
+                    updateResult = "Course updated successfully.";
+                }
 
             } else {
                 updateResult = "Student ID not found.";
