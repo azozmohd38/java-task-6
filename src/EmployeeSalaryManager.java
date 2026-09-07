@@ -180,7 +180,7 @@ public class EmployeeSalaryManager {
 
                         for (Integer id : employeeSalaries.keySet()) {
                             System.out.println("Employee ID: " + id
-                                    + " Salary: " + employeeSalaries.get(id));
+                                    + " | Salary: " + employeeSalaries.get(id));
                         }
                         break;
 
