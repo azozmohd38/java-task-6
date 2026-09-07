@@ -89,6 +89,7 @@ public class ProductInventorySet {
             }
             System.out.println("Search result: " + searchResult);
             System.out.println("Inventory classification: " + inventoryClassification);
+            System.out.println("Inventory check completed.");
         }
 
         input.close();
