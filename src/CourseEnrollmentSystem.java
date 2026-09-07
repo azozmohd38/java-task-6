@@ -11,6 +11,7 @@ public class CourseEnrollmentSystem {
         // Declare variables required for the program
         int numberOfStudents;
         int totalStudentRecordsEntered = 0;
+        int duplicateStudentIds = 0;
         int studentId;
         int updateStudentId;
         String courseName;
@@ -65,6 +66,7 @@ public class CourseEnrollmentSystem {
 
                 // Check if student ID already exists
                 if (studentIds.contains(studentId)) {
+                    duplicateStudentIds++;
                     System.out.println("Student ID already exists. Record not added.");
                 } else {
 
