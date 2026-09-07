@@ -5,7 +5,7 @@ public class ProductInventorySet {
     public static void main(String[] args) {
 
         // Create Scanner object to read user input
-        Scanner scanner = new Scanner(System.in);
+        Scanner input = new Scanner(System.in);
 
         // Declare variables required for the program
         int numberOfProducts;
@@ -20,7 +20,7 @@ public class ProductInventorySet {
 
         // Prompt user to enter the number of products
         System.out.print("Enter the number of products: ");
-        numberOfProducts = scanner.nextInt();
+        numberOfProducts = input.nextInt();
 
         // Validate the entered number of products
         if (numberOfProducts <= 0) {
@@ -30,7 +30,7 @@ public class ProductInventorySet {
             // Use a loop to read and store product names
             for (int i = 0; i < numberOfProducts; i++) {
                 System.out.print("Enter product name: ");
-                productName = scanner.next();
+                productName = input.next();
 
                 totalProductsEntered++;
 
@@ -42,7 +42,7 @@ public class ProductInventorySet {
 
             // Prompt user to search for a product
             System.out.print("Enter product name to search: ");
-            searchProduct = scanner.next();
+            searchProduct = input.next();
 
             // Check whether the product exists using contains()
             if (productInventory.contains(searchProduct)) {
@@ -69,6 +69,6 @@ public class ProductInventorySet {
         }
 
         // Close Scanner before program ends
-        scanner.close();
+        input.close();
     }
 }
