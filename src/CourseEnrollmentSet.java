@@ -59,7 +59,9 @@ public class CourseEnrollmentSet {
             courseToRemove = input.nextLine().trim();
 
             // Remove course using remove() method
-            if (courseCatalog.remove(courseToRemove)) {
+            if (courseToRemove.isEmpty()) {
+                removalResult = "Course not found.";
+            } else if (courseCatalog.remove(courseToRemove)) {
                 removalResult = "Course removed successfully.";
             } else {
                 removalResult = "Course not found.";
