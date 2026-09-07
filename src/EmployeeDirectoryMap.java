@@ -106,6 +106,7 @@ public class EmployeeDirectoryMap {
             }
             System.out.println("Search result: " + searchResult);
             System.out.println("Company classification: " + companyClassification);
+            System.out.println("Employee directory check completed.");
         }
 
         input.close();
