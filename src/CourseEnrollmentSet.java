@@ -20,7 +20,14 @@ public class CourseEnrollmentSet {
 
         // Prompt user to enter the number of courses
         System.out.print("Enter the number of courses: ");
+        while (!input.hasNextInt()) {
+            System.out.println("Invalid number of courses.");
+            input.next();
+            System.out.print("Enter the number of courses: ");
+        }
+
         numberOfCourses = input.nextInt();
+        input.nextLine();
 
         // Validate the entered number of courses
         if (numberOfCourses <= 0) {
