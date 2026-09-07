@@ -198,11 +198,13 @@ public class UniversityCourseRegistrationSystem {
                     if (studentCourses.containsKey(removeId)) {
 
                         System.out.print("Enter Course Name: ");
-                        String removeCourse = scanner.nextLine();
+                        String removeCourse = scanner.nextLine().trim();
 
                         HashSet<String> courses = studentCourses.get(removeId);
 
-                        if (courses.remove(removeCourse)) {
+                        if (removeCourse.isEmpty()) {
+                            System.out.println("Course not found.");
+                        } else if (courses.remove(removeCourse)) {
                             studentCourses.replace(removeId, courses);
                             System.out.println("Course removed successfully.");
                         } else {
