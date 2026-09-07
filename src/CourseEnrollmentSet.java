@@ -10,6 +10,7 @@ public class CourseEnrollmentSet {
         // Declare variables required for the program
         int numberOfCourses;
         int totalCoursesEntered = 0;
+        int duplicateCourses = 0;
         String courseName;
         String courseToRemove;
         String removalResult;
@@ -48,6 +49,7 @@ public class CourseEnrollmentSet {
 
                 // Add course to HashSet and check for duplicates
                 if (!courseCatalog.add(courseName)) {
+                    duplicateCourses++;
                     System.out.println("Course already exists. Duplicate entries are not allowed.");
                 }
             }
