@@ -53,6 +53,12 @@ public class StudentAttendanceManager {
                 studentId = input.nextInt();
 
                 System.out.print("Enter number of attended days: ");
+                while (!input.hasNextInt()) {
+                    System.out.println("Attendance days must be a number.");
+                    input.next();
+                    System.out.print("Enter number of attended days: ");
+                }
+
                 attendedDays = input.nextInt();
 
                 // Check for duplicate student IDs
