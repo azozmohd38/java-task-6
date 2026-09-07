@@ -83,7 +83,10 @@ public class CourseEnrollmentSet {
             System.out.println("Total courses entered: " + totalCoursesEntered);
             System.out.println("Total unique courses remaining: " + remainingCourseCount);
             System.out.println("Duplicate courses: " + duplicateCourses);
-            System.out.println("All remaining course names: " + courseCatalog);
+            System.out.println("All remaining course names:");
+            for (String course : courseCatalog) {
+                System.out.println(course);
+            }
             System.out.println("Removal result: " + removalResult);
             System.out.println("Course catalog classification: " + catalogClassification);
         }
