@@ -19,6 +19,12 @@ public class StudentSetManager {
 
         // Prompt user to enter the number of student IDs
         System.out.print("Enter the number of student IDs to register: ");
+        while (!input.hasNextInt()) {
+            System.out.println("Invalid number of students.");
+            input.next();
+            System.out.print("Enter the number of student IDs to register: ");
+        }
+
         numberOfStudents = input.nextInt();
 
         // Validate the entered number of students
