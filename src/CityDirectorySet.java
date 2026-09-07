@@ -5,7 +5,7 @@ public class CityDirectorySet {
     public static void main(String[] args) {
 
         // Create Scanner object to read user input
-        Scanner scanner = new Scanner(System.in);
+        Scanner input = new Scanner(System.in);
 
         // Declare variables required for the program
         int numberOfCities;
@@ -20,7 +20,7 @@ public class CityDirectorySet {
 
         // Prompt user to enter the number of cities
         System.out.print("Enter the number of cities: ");
-        numberOfCities = scanner.nextInt();
+        numberOfCities = input.nextInt();
 
         // Validate the entered number of cities
         if (numberOfCities <= 0) {
@@ -30,7 +30,7 @@ public class CityDirectorySet {
             // Use a loop to read and store city names
             for (int i = 0; i < numberOfCities; i++) {
                 System.out.print("Enter city name: ");
-                cityName = scanner.next();
+                cityName = input.next();
 
                 totalCitiesEntered++;
 
@@ -42,7 +42,7 @@ public class CityDirectorySet {
 
             // Prompt user to search for a city
             System.out.print("Enter city name to search: ");
-            searchCity = scanner.next();
+            searchCity = input.next();
 
             // Check whether the city exists using contains()
             if (cityDirectory.contains(searchCity)) {
@@ -69,6 +69,6 @@ public class CityDirectorySet {
         }
 
         // Close Scanner before program ends
-        scanner.close();
+        input.close();
     }
 }
