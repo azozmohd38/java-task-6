@@ -87,7 +87,7 @@ public class UniversityCourseRegistrationSystem {
                 }
 
                 System.out.print("Enter course " + j + ": ");
-                String course = scanner.nextLine();
+                String course = scanner.nextLine().trim();
 
                 if (courses.add(course)) {
                     System.out.println("Course added.");
