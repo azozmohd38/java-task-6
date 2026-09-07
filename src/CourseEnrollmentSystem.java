@@ -91,7 +91,7 @@ public class CourseEnrollmentSystem {
             if (studentCourses.containsKey(updateStudentId)) {
 
                 System.out.print("Enter new course name: ");
-                newCourseName = input.next();
+                newCourseName = input.nextLine().trim();
 
                 // Update course using replace() method
                 studentCourses.replace(updateStudentId, newCourseName);
