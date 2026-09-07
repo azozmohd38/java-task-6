@@ -11,6 +11,7 @@ public class StudentSetManager {
         // Declare variables needed for the program
         int numberOfStudents;
         int totalIdsEntered = 0;
+        int duplicateCount = 0;
         String studentId;
         String registrationClassification;
 
@@ -46,6 +47,7 @@ public class StudentSetManager {
 
                 // Add ID to HashSet and check for duplicates
                 if (!studentIds.add(studentId)) {
+                    duplicateCount++;
                     System.out.println("Duplicate ID detected. ID was not added.");
                 }
             }
@@ -65,6 +67,7 @@ public class StudentSetManager {
             System.out.println("\n===== Student Registration Summary =====");
             System.out.println("Total IDs entered: " + totalIdsEntered);
             System.out.println("Total unique student IDs: " + uniqueStudentCount);
+            System.out.println("Duplicate IDs: " + duplicateCount);
             System.out.println("All unique student IDs:");
             for (String id : studentIds) {
                 System.out.println(id);
