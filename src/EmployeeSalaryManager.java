@@ -188,7 +188,7 @@ public class EmployeeSalaryManager {
                         // Display salary statistics
                         if (employeeSalaries.size() > 0) {
 
-                            highestSalary = Double.MIN_VALUE;
+                            highestSalary = -Double.MAX_VALUE;
                             lowestSalary = Double.MAX_VALUE;
                             totalPayroll = 0;
 
