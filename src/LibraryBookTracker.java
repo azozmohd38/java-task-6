@@ -109,7 +109,10 @@ public class LibraryBookTracker {
             System.out.println("Total book records entered: " + totalBookRecordsEntered);
             System.out.println("Total unique books: " + uniqueBookCount);
             System.out.println("Duplicate book IDs: " + duplicateBookIds);
-            System.out.println("All book IDs: " + bookIds);
+            System.out.println("All book IDs:");
+            for (int id : bookIds) {
+                System.out.println(id);
+            }
             System.out.println("All book IDs with their corresponding titles: " + bookCatalog);
             System.out.println("Search result:\n" + searchResult);
             System.out.println("Library classification: " + libraryClassification);
