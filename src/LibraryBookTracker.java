@@ -25,7 +25,14 @@ public class LibraryBookTracker {
 
         // Prompt user to enter the number of books
         System.out.print("Enter the number of books: ");
+        while (!input.hasNextInt()) {
+            System.out.println("Invalid number of books.");
+            input.next();
+            System.out.print("Enter the number of books: ");
+        }
+
         numberOfBooks = input.nextInt();
+        input.nextLine();
 
         // Validate the entered number of books
         if (numberOfBooks <= 0) {
