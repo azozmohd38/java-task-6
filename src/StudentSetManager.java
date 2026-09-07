@@ -39,6 +39,11 @@ public class StudentSetManager {
 
                 totalIdsEntered++;
 
+                if (studentId.isEmpty()) {
+                    System.out.println("Student ID cannot be empty.");
+                    continue;
+                }
+
                 // Add ID to HashSet and check for duplicates
                 if (!studentIds.add(studentId)) {
                     System.out.println("Duplicate ID detected. ID was not added.");
