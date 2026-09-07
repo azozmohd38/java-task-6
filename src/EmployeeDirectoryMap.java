@@ -21,7 +21,14 @@ public class EmployeeDirectoryMap {
 
         // Prompt user to enter the number of employees
         System.out.print("Enter the number of employees: ");
+        while (!input.hasNextInt()) {
+            System.out.println("Invalid number of employees.");
+            input.next();
+            System.out.print("Enter the number of employees: ");
+        }
+
         numberOfEmployees = input.nextInt();
+        input.nextLine();
 
         // Validate the entered number of employees
         if (numberOfEmployees <= 0) {
