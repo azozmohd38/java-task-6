@@ -10,6 +10,7 @@ public class ProductInventorySet {
         // Declare variables required for the program
         int numberOfProducts;
         int totalProductsEntered = 0;
+        int duplicateProducts = 0;
         String productName;
         String searchProduct;
         String searchResult;
@@ -48,6 +49,7 @@ public class ProductInventorySet {
 
                 // Add product to HashSet and check for duplicates
                 if (!productInventory.add(productName)) {
+                    duplicateProducts++;
                     System.out.println("Product already exists. Duplicate entries are not allowed.");
                 }
             }
