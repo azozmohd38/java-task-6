@@ -6,7 +6,7 @@ public class LibraryBookTracker {
     public static void main(String[] args) {
 
         // Create Scanner object to read user input
-        Scanner scanner = new Scanner(System.in);
+        Scanner input = new Scanner(System.in);
 
         // Declare variables required for the program
         int numberOfBooks;
@@ -25,7 +25,7 @@ public class LibraryBookTracker {
 
         // Prompt user to enter the number of books
         System.out.print("Enter the number of books: ");
-        numberOfBooks = scanner.nextInt();
+        numberOfBooks = input.nextInt();
 
         // Validate the entered number of books
         if (numberOfBooks <= 0) {
@@ -36,10 +36,10 @@ public class LibraryBookTracker {
             for (int i = 0; i < numberOfBooks; i++) {
 
                 System.out.print("Enter book ID: ");
-                bookId = scanner.nextInt();
+                bookId = input.nextInt();
 
                 System.out.print("Enter book title: ");
-                bookTitle = scanner.next();
+                bookTitle = input.next();
 
                 totalBookRecordsEntered++;
 
@@ -56,7 +56,7 @@ public class LibraryBookTracker {
 
             // Prompt user to search for a book ID
             System.out.print("Enter book ID to search: ");
-            searchBookId = scanner.nextInt();
+            searchBookId = input.nextInt();
 
             // Search for book using HashMap
             if (bookCatalog.containsKey(searchBookId)) {
@@ -85,6 +85,6 @@ public class LibraryBookTracker {
         }
 
         // Close Scanner before program ends
-        scanner.close();
+        input.close();
     }
 }
