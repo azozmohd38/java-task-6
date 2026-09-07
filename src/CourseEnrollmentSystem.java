@@ -130,7 +130,6 @@ public class CourseEnrollmentSystem {
             System.out.println("Enrollment classification: " + enrollmentClassification);
         }
 
-        // Close Scanner before program ends
         input.close();
     }
 }
