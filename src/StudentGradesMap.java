@@ -73,6 +73,12 @@ public class StudentGradesMap {
 
                 // Prompt user to enter student ID for grade update
                 System.out.print("Enter student ID to update grade: ");
+                while (!input.hasNextInt()) {
+                    System.out.println("Student ID not found.");
+                    input.next();
+                    System.out.print("Enter student ID to update grade: ");
+                }
+
                 updateStudentId = input.nextInt();
 
                 // Check if student ID exists and update grade using replace()
