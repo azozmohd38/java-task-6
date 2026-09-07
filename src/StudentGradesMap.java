@@ -122,8 +122,12 @@ public class StudentGradesMap {
 
                 // Display student grade information
                 System.out.println("Total student records: " + studentGrades.size());
-                System.out.println("All student IDs and grades: " + studentGrades);
-                System.out.println("Average grade: " + averageGrade);
+                System.out.println("All student IDs and grades:");
+                for (int id : studentGrades.keySet()) {
+                    System.out.println(id + " - " + studentGrades.get(id));
+                }
+                System.out.printf("Average grade: %.2f%n", averageGrade);
+                System.out.println("Duplicate student IDs: " + duplicateStudentIds);
                 System.out.println("Class performance classification: " + performanceClassification);
             }
 
