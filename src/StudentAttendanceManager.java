@@ -252,7 +252,6 @@ public class StudentAttendanceManager {
             } while (menuChoice != 7);
         }
 
-        // Close Scanner before program ends
         input.close();
     }
 }
