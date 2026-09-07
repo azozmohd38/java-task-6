@@ -9,6 +9,7 @@ public class StudentGradesMap {
             // Declare variables required for the program
             int numberOfStudents;
             int totalStudentRecords = 0;
+            int duplicateStudentIds = 0;
             int studentId;
             int updateStudentId;
             double studentGrade;
@@ -62,6 +63,7 @@ public class StudentGradesMap {
 
                     // Check if student ID already exists before adding
                     if (studentGrades.containsKey(studentId)) {
+                        duplicateStudentIds++;
                         System.out.println("Student ID already exists. Record not added.");
                     } else {
                         studentGrades.put(studentId, studentGrade);
