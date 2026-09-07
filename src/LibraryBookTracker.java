@@ -121,7 +121,6 @@ public class LibraryBookTracker {
             System.out.println("Library classification: " + libraryClassification);
         }
 
-        // Close Scanner before program ends
         input.close();
     }
 }
