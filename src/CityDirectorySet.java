@@ -89,6 +89,7 @@ public class CityDirectorySet {
             }
             System.out.println("Search result: " + searchResult);
             System.out.println("Directory classification: " + directoryClassification);
+            System.out.println("City directory check completed.");
         }
 
         input.close();
