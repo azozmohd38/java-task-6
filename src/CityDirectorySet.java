@@ -41,6 +41,11 @@ public class CityDirectorySet {
 
                 totalCitiesEntered++;
 
+                if (cityName.isEmpty()) {
+                    System.out.println("City name cannot be empty.");
+                    continue;
+                }
+
                 // Add city to TreeSet and check for duplicates
                 if (!cityDirectory.add(cityName)) {
                     System.out.println("City already exists. Duplicate entries are not allowed.");
