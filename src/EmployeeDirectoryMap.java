@@ -38,7 +38,14 @@ public class EmployeeDirectoryMap {
             // Use a loop to read employee IDs and names
             for (int i = 0; i < numberOfEmployees; i++) {
                 System.out.print("Enter employee ID: ");
+                while (!input.hasNextInt()) {
+                    System.out.println("Employee ID must be a number.");
+                    input.next();
+                    System.out.print("Enter employee ID: ");
+                }
+
                 employeeId = input.nextInt();
+                input.nextLine();
 
                 System.out.print("Enter employee name: ");
                 employeeName = input.next();
