@@ -41,6 +41,11 @@ public class CourseEnrollmentSet {
 
                 totalCoursesEntered++;
 
+                if (courseName.isEmpty()) {
+                    System.out.println("Course name cannot be empty.");
+                    continue;
+                }
+
                 // Add course to HashSet and check for duplicates
                 if (!courseCatalog.add(courseName)) {
                     System.out.println("Course already exists. Duplicate entries are not allowed.");
