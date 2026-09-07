@@ -73,6 +73,7 @@ public class StudentSetManager {
                 System.out.println(id);
             }
             System.out.println("Registration classification: " + registrationClassification);
+            System.out.println("Registration completed.");
         }
 
         input.close();
