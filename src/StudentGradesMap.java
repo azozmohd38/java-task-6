@@ -4,7 +4,7 @@ public class StudentGradesMap {
         public static void main(String[] args) {
 
             // Create Scanner object to read user input
-            Scanner scanner = new Scanner(System.in);
+            Scanner input = new Scanner(System.in);
 
             // Declare variables required for the program
             int numberOfStudents;
@@ -22,7 +22,7 @@ public class StudentGradesMap {
 
             // Prompt user to enter the number of students
             System.out.print("Enter the number of students: ");
-            numberOfStudents = scanner.nextInt();
+            numberOfStudents = input.nextInt();
 
             // Validate the entered number of students
             if (numberOfStudents <= 0) {
@@ -32,10 +32,10 @@ public class StudentGradesMap {
                 // Use a loop to read student IDs and grades
                 for (int i = 0; i < numberOfStudents; i++) {
                     System.out.print("Enter student ID: ");
-                    studentId = scanner.nextInt();
+                    studentId = input.nextInt();
 
                     System.out.print("Enter student grade: ");
-                    studentGrade = scanner.nextDouble();
+                    studentGrade = input.nextDouble();
 
                     // Check if student ID already exists before adding
                     if (studentGrades.containsKey(studentId)) {
@@ -48,12 +48,12 @@ public class StudentGradesMap {
 
                 // Prompt user to enter student ID for grade update
                 System.out.print("Enter student ID to update grade: ");
-                updateStudentId = scanner.nextInt();
+                updateStudentId = input.nextInt();
 
                 // Check if student ID exists and update grade using replace()
                 if (studentGrades.containsKey(updateStudentId)) {
                     System.out.print("Enter new grade: ");
-                    newGrade = scanner.nextDouble();
+                    newGrade = input.nextDouble();
 
                     studentGrades.replace(updateStudentId, newGrade);
                     System.out.println("Grade updated successfully.");
@@ -87,6 +87,6 @@ public class StudentGradesMap {
             }
 
             // Close Scanner before program ends
-            scanner.close();
+            input.close();
         }
 }
