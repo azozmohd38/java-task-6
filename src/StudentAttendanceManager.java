@@ -242,7 +242,7 @@ public class StudentAttendanceManager {
 
                     case 7:
                         // Exit system
-                        System.out.println("Exiting program...");
+                        System.out.println("Program terminated.");
                         break;
 
                     default:
