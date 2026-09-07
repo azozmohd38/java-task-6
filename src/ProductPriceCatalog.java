@@ -40,7 +40,7 @@ public class ProductPriceCatalog {
             // Use a loop to read product names and prices
             for (int i = 0; i < numberOfProducts; i++) {
                 System.out.print("Enter product name: ");
-                productName = input.next();
+                productName = input.nextLine().trim();
 
                 System.out.print("Enter product price: ");
                 productPrice = input.nextDouble();
