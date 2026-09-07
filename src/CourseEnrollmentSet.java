@@ -89,6 +89,7 @@ public class CourseEnrollmentSet {
             }
             System.out.println("Removal result: " + removalResult);
             System.out.println("Course catalog classification: " + catalogClassification);
+            System.out.println("Course catalog check completed.");
         }
 
         input.close();
