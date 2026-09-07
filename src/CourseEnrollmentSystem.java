@@ -6,7 +6,7 @@ public class CourseEnrollmentSystem {
     public static void main(String[] args) {
 
         // Create Scanner object to read user input
-        Scanner scanner = new Scanner(System.in);
+        Scanner input = new Scanner(System.in);
 
         // Declare variables required for the program
         int numberOfStudents;
@@ -26,7 +26,7 @@ public class CourseEnrollmentSystem {
 
         // Prompt user to enter the number of students
         System.out.print("Enter the number of students: ");
-        numberOfStudents = scanner.nextInt();
+        numberOfStudents = input.nextInt();
 
         // Validate the entered number of students
         if (numberOfStudents <= 0) {
@@ -37,10 +37,10 @@ public class CourseEnrollmentSystem {
             for (int i = 0; i < numberOfStudents; i++) {
 
                 System.out.print("Enter student ID: ");
-                studentId = scanner.nextInt();
+                studentId = input.nextInt();
 
                 System.out.print("Enter course name: ");
-                courseName = scanner.next();
+                courseName = input.next();
 
                 totalStudentRecordsEntered++;
 
@@ -57,13 +57,13 @@ public class CourseEnrollmentSystem {
 
             // Prompt user to enter student ID for course update
             System.out.print("Enter student ID to update course: ");
-            updateStudentId = scanner.nextInt();
+            updateStudentId = input.nextInt();
 
             // Check if student ID exists and update course
             if (studentCourses.containsKey(updateStudentId)) {
 
                 System.out.print("Enter new course name: ");
-                newCourseName = scanner.next();
+                newCourseName = input.next();
 
                 // Update course using replace() method
                 studentCourses.replace(updateStudentId, newCourseName);
@@ -93,6 +93,6 @@ public class CourseEnrollmentSystem {
         }
 
         // Close Scanner before program ends
-        scanner.close();
+        input.close();
     }
 }
