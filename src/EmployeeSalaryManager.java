@@ -50,6 +50,12 @@ public class EmployeeSalaryManager {
                 employeeId = input.nextInt();
 
                 System.out.print("Enter employee salary: ");
+                while (!input.hasNextDouble()) {
+                    System.out.println("Salary must be a number.");
+                    input.next();
+                    System.out.print("Enter employee salary: ");
+                }
+
                 salary = input.nextDouble();
 
                 // Check if employee ID already exists
