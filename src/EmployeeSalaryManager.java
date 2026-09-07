@@ -5,7 +5,7 @@ public class EmployeeSalaryManager {
     public static void main(String[] args) {
 
         // Create Scanner object for user input
-        Scanner scanner = new Scanner(System.in);
+        Scanner input = new Scanner(System.in);
 
         // Declare variables required for the program
         int numberOfEmployees;
@@ -24,7 +24,7 @@ public class EmployeeSalaryManager {
 
         // Prompt user to enter number of employees
         System.out.print("Enter the number of employees: ");
-        numberOfEmployees = scanner.nextInt();
+        numberOfEmployees = input.nextInt();
 
         // Validate number of employees
         if (numberOfEmployees <= 0) {
@@ -35,10 +35,10 @@ public class EmployeeSalaryManager {
             for (int i = 0; i < numberOfEmployees; i++) {
 
                 System.out.print("Enter employee ID: ");
-                employeeId = scanner.nextInt();
+                employeeId = input.nextInt();
 
                 System.out.print("Enter employee salary: ");
-                salary = scanner.nextDouble();
+                salary = input.nextDouble();
 
                 // Check if employee ID already exists
                 if (employeeSalaries.containsKey(employeeId)) {
@@ -61,7 +61,7 @@ public class EmployeeSalaryManager {
                 System.out.println("7. Exit");
                 System.out.print("Enter your choice: ");
 
-                menuChoice = scanner.nextInt();
+                menuChoice = input.nextInt();
 
                 // Process menu using switch-case
                 switch (menuChoice) {
@@ -69,13 +69,13 @@ public class EmployeeSalaryManager {
                     case 1:
                         // Add new employee
                         System.out.print("Enter employee ID: ");
-                        employeeId = scanner.nextInt();
+                        employeeId = input.nextInt();
 
                         if (employeeSalaries.containsKey(employeeId)) {
                             System.out.println("Employee ID already exists. Record not added.");
                         } else {
                             System.out.print("Enter employee salary: ");
-                            salary = scanner.nextDouble();
+                            salary = input.nextDouble();
 
                             employeeSalaries.put(employeeId, salary);
                             System.out.println("Employee added successfully.");
@@ -85,7 +85,7 @@ public class EmployeeSalaryManager {
                     case 2:
                         // Search employee
                         System.out.print("Enter employee ID to search: ");
-                        searchEmployeeId = scanner.nextInt();
+                        searchEmployeeId = input.nextInt();
 
                         if (employeeSalaries.containsKey(searchEmployeeId)) {
                             System.out.println("Employee ID: " + searchEmployeeId);
@@ -99,12 +99,12 @@ public class EmployeeSalaryManager {
                     case 3:
                         // Update employee salary
                         System.out.print("Enter employee ID to update: ");
-                        searchEmployeeId = scanner.nextInt();
+                        searchEmployeeId = input.nextInt();
 
                         if (employeeSalaries.containsKey(searchEmployeeId)) {
 
                             System.out.print("Enter new salary: ");
-                            newSalary = scanner.nextDouble();
+                            newSalary = input.nextDouble();
 
                             employeeSalaries.replace(searchEmployeeId, newSalary);
 
@@ -117,7 +117,7 @@ public class EmployeeSalaryManager {
                     case 4:
                         // Remove employee
                         System.out.print("Enter employee ID to remove: ");
-                        searchEmployeeId = scanner.nextInt();
+                        searchEmployeeId = input.nextInt();
 
                         if (employeeSalaries.remove(searchEmployeeId) != null) {
                             System.out.println("Employee removed successfully.");
@@ -184,6 +184,6 @@ public class EmployeeSalaryManager {
         }
 
         // Close Scanner before program ends
-        scanner.close();
+        input.close();
     }
 }
