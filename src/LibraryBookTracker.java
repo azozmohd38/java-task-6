@@ -57,6 +57,11 @@ public class LibraryBookTracker {
 
                 totalBookRecordsEntered++;
 
+                if (bookTitle.isEmpty()) {
+                    System.out.println("Book title cannot be empty.");
+                    continue;
+                }
+
                 // Check if book ID already exists in the HashSet
                 if (bookIds.contains(bookId)) {
                     System.out.println("Duplicate Book ID. Record not added.");
