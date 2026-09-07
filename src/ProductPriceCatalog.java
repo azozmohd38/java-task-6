@@ -10,6 +10,7 @@ public class ProductPriceCatalog {
         // Declare variables required for the program
         int numberOfProducts;
         int totalProductsEntered = 0;
+        int duplicateProducts = 0;
         String productName;
         String searchProduct;
         String updateChoice;
@@ -66,6 +67,7 @@ public class ProductPriceCatalog {
 
                 // Check if product already exists before adding
                 if (productCatalog.containsKey(productName)) {
+                    duplicateProducts++;
                     System.out.println("Product already exists. Record not added.");
                 } else {
                     productCatalog.put(productName, productPrice);
