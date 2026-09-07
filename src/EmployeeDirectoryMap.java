@@ -96,8 +96,10 @@ public class EmployeeDirectoryMap {
             }
 
             // Display employee directory information
+            System.out.println("\n===== Employee Directory Summary =====");
             System.out.println("Total employee records entered: " + totalRecordsEntered);
-            System.out.println("Total unique employees: " + employeeDirectory.size());
+            System.out.println("Total unique employees: " + uniqueEmployeeCount);
+            System.out.println("Duplicate employee IDs: " + duplicateEmployeeIds);
             System.out.println("All employee IDs and names: " + employeeDirectory);
             System.out.println("Search result: " + searchResult);
             System.out.println("Company classification: " + companyClassification);
