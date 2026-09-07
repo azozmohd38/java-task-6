@@ -35,7 +35,7 @@ public class StudentSetManager {
             // Use a loop to read and store student IDs
             for (int i = 0; i < numberOfStudents; i++) {
                 System.out.print("Enter student ID: ");
-                studentId = input.next();
+                studentId = input.next().trim();
 
                 totalIdsEntered++;
 
