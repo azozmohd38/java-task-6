@@ -56,7 +56,7 @@ public class ProductInventorySet {
 
             // Prompt user to search for a product
             System.out.print("Enter product name to search: ");
-            searchProduct = input.next();
+            searchProduct = input.nextLine().trim();
 
             // Check whether the product exists using contains()
             if (productInventory.contains(searchProduct)) {
