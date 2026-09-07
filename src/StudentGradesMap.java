@@ -1,8 +1,6 @@
-
-    import java.util.HashMap;
+import java.util.HashMap;
 import java.util.Scanner;
-
-    public class StudentGradesMap {
+public class StudentGradesMap {
         public static void main(String[] args) {
 
             // Create Scanner object to read user input
@@ -91,4 +89,4 @@ import java.util.Scanner;
             // Close Scanner before program ends
             scanner.close();
         }
-    }
+}
