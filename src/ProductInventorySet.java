@@ -67,10 +67,12 @@ public class ProductInventorySet {
                 searchResult = "Product not found in inventory.";
             }
 
+            int uniqueProductCount = productInventory.size();
+
             // Classify inventory size based on unique products
-            if (productInventory.size() < 5) {
+            if (uniqueProductCount < 5) {
                 inventoryClassification = "Small Inventory";
-            } else if (productInventory.size() <= 10) {
+            } else if (uniqueProductCount <= 10) {
                 inventoryClassification = "Medium Inventory";
             } else {
                 inventoryClassification = "Large Inventory";
