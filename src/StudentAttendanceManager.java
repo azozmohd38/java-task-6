@@ -146,11 +146,20 @@ public class StudentAttendanceManager {
                         if (attendanceRecords.containsKey(searchStudentId)) {
 
                             System.out.print("Enter new attendance days: ");
+                            while (!input.hasNextInt()) {
+                                System.out.println("Attendance days must be a number.");
+                                input.next();
+                                System.out.print("Enter new attendance days: ");
+                            }
+
                             newAttendanceDays = input.nextInt();
 
-                            attendanceRecords.replace(searchStudentId, newAttendanceDays);
-
-                            System.out.println("Attendance updated successfully.");
+                            if (newAttendanceDays < 0) {
+                                System.out.println("Attendance days cannot be negative.");
+                            } else {
+                                attendanceRecords.replace(searchStudentId, newAttendanceDays);
+                                System.out.println("Attendance updated successfully.");
+                            }
 
                         } else {
                             System.out.println("Student not found.");
