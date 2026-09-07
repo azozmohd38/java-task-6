@@ -79,8 +79,10 @@ public class CityDirectorySet {
             }
 
             // Display city directory information
+            System.out.println("\n===== City Directory Summary =====");
             System.out.println("Total cities entered: " + totalCitiesEntered);
-            System.out.println("Total unique cities: " + cityDirectory.size());
+            System.out.println("Total unique cities: " + uniqueCityCount);
+            System.out.println("Duplicate cities: " + duplicateCities);
             System.out.println("All cities in alphabetical order: " + cityDirectory);
             System.out.println("Search result: " + searchResult);
             System.out.println("Directory classification: " + directoryClassification);
