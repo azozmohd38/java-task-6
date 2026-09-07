@@ -38,6 +38,12 @@ public class StudentGradesMap {
                 // Use a loop to read student IDs and grades
                 for (int i = 0; i < numberOfStudents; i++) {
                     System.out.print("Enter student ID: ");
+                    while (!input.hasNextInt()) {
+                        System.out.println("Student ID must be a number.");
+                        input.next();
+                        System.out.print("Enter student ID: ");
+                    }
+
                     studentId = input.nextInt();
 
                     System.out.print("Enter student grade: ");
