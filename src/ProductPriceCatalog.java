@@ -76,7 +76,7 @@ public class ProductPriceCatalog {
 
             // Prompt user to search for a product
             System.out.print("Enter product name to search: ");
-            searchProduct = input.next();
+            searchProduct = input.nextLine().trim();
 
             // Search product and update price if required
             if (productCatalog.containsKey(searchProduct)) {
