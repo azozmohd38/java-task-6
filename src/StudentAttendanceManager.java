@@ -184,7 +184,7 @@ public class StudentAttendanceManager {
 
                         for (Map.Entry<Integer, Integer> entry : attendanceRecords.entrySet()) {
                             System.out.println("Student ID: " + entry.getKey()
-                                    + ", Attendance Days: " + entry.getValue());
+                                    + " | Attendance Days: " + entry.getValue());
                         }
                         break;
 
