@@ -5,7 +5,7 @@ public class CourseEnrollmentSet {
     public static void main(String[] args) {
 
         // Create Scanner object to read user input
-        Scanner scanner = new Scanner(System.in);
+        Scanner input = new Scanner(System.in);
 
         // Declare variables required for the program
         int numberOfCourses;
@@ -20,7 +20,7 @@ public class CourseEnrollmentSet {
 
         // Prompt user to enter the number of courses
         System.out.print("Enter the number of courses: ");
-        numberOfCourses = scanner.nextInt();
+        numberOfCourses = input.nextInt();
 
         // Validate the entered number of courses
         if (numberOfCourses <= 0) {
@@ -30,7 +30,7 @@ public class CourseEnrollmentSet {
             // Use a loop to read and store course names
             for (int i = 0; i < numberOfCourses; i++) {
                 System.out.print("Enter course name: ");
-                courseName = scanner.next();
+                courseName = input.next();
 
                 totalCoursesEntered++;
 
@@ -42,7 +42,7 @@ public class CourseEnrollmentSet {
 
             // Prompt user to enter a course to remove
             System.out.print("Enter course name to remove: ");
-            courseToRemove = scanner.next();
+            courseToRemove = input.next();
 
             // Remove course using remove() method
             if (courseCatalog.remove(courseToRemove)) {
@@ -69,6 +69,6 @@ public class CourseEnrollmentSet {
         }
 
         // Close Scanner before program ends
-        scanner.close();
+        input.close();
     }
 }
