@@ -44,7 +44,14 @@ public class CourseEnrollmentSystem {
             for (int i = 0; i < numberOfStudents; i++) {
 
                 System.out.print("Enter student ID: ");
+                while (!input.hasNextInt()) {
+                    System.out.println("Student ID must be a number.");
+                    input.next();
+                    System.out.print("Enter student ID: ");
+                }
+
                 studentId = input.nextInt();
+                input.nextLine();
 
                 System.out.print("Enter course name: ");
                 courseName = input.next();
