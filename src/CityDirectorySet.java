@@ -56,7 +56,7 @@ public class CityDirectorySet {
 
             // Prompt user to search for a city
             System.out.print("Enter city name to search: ");
-            searchCity = input.next();
+            searchCity = input.nextLine().trim();
 
             // Check whether the city exists using contains()
             if (cityDirectory.contains(searchCity)) {
