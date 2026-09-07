@@ -108,7 +108,6 @@ public class EmployeeDirectoryMap {
             System.out.println("Company classification: " + companyClassification);
         }
 
-        // Close Scanner before program ends
         input.close();
     }
 }
