@@ -72,7 +72,6 @@ public class StudentSetManager {
             System.out.println("Registration classification: " + registrationClassification);
         }
 
-        // Close Scanner before program ends
         input.close();
     }
 }
