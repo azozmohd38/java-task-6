@@ -170,9 +170,11 @@ public class UniversityCourseRegistrationSystem {
                         }
 
                         System.out.print("Enter Course Name: ");
-                        String newCourse = scanner.nextLine();
+                        String newCourse = scanner.nextLine().trim();
 
-                        if (courses.contains(newCourse)) {
+                        if (newCourse.isEmpty()) {
+                            System.out.println("Course name cannot be empty.");
+                        } else if (courses.contains(newCourse)) {
                             System.out.println("Duplicate course registration.");
                         } else {
                             courses.add(newCourse);
