@@ -83,7 +83,10 @@ public class ProductInventorySet {
             System.out.println("Total products entered: " + totalProductsEntered);
             System.out.println("Total unique products: " + uniqueProductCount);
             System.out.println("Duplicate products: " + duplicateProducts);
-            System.out.println("All products in the inventory: " + productInventory);
+            System.out.println("All products in the inventory:");
+            for (String product : productInventory) {
+                System.out.println(product);
+            }
             System.out.println("Search result: " + searchResult);
             System.out.println("Inventory classification: " + inventoryClassification);
         }
