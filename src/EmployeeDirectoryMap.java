@@ -69,6 +69,12 @@ public class EmployeeDirectoryMap {
 
             // Prompt user to search for an employee ID
             System.out.print("Enter employee ID to search: ");
+            while (!input.hasNextInt()) {
+                System.out.println("Employee ID not found.");
+                input.next();
+                System.out.print("Enter employee ID to search: ");
+            }
+
             searchEmployeeId = input.nextInt();
 
             // Search employee using containsKey() method
