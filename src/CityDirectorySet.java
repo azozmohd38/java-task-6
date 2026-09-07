@@ -37,7 +37,7 @@ public class CityDirectorySet {
             // Use a loop to read and store city names
             for (int i = 0; i < numberOfCities; i++) {
                 System.out.print("Enter city name: ");
-                cityName = input.next();
+                cityName = input.nextLine().trim();
 
                 totalCitiesEntered++;
 
