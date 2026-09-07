@@ -65,7 +65,10 @@ public class StudentSetManager {
             System.out.println("\n===== Student Registration Summary =====");
             System.out.println("Total IDs entered: " + totalIdsEntered);
             System.out.println("Total unique student IDs: " + uniqueStudentCount);
-            System.out.println("All unique student IDs: " + studentIds);
+            System.out.println("All unique student IDs:");
+            for (String id : studentIds) {
+                System.out.println(id);
+            }
             System.out.println("Registration classification: " + registrationClassification);
         }
 
