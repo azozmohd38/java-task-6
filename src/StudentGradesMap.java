@@ -84,10 +84,20 @@ public class StudentGradesMap {
                 // Check if student ID exists and update grade using replace()
                 if (studentGrades.containsKey(updateStudentId)) {
                     System.out.print("Enter new grade: ");
+                    while (!input.hasNextDouble()) {
+                        System.out.println("Grade must be a number.");
+                        input.next();
+                        System.out.print("Enter new grade: ");
+                    }
+
                     newGrade = input.nextDouble();
 
-                    studentGrades.replace(updateStudentId, newGrade);
-                    System.out.println("Grade updated successfully.");
+                    if (newGrade < 0 || newGrade > 100) {
+                        System.out.println("Grade must be between 0 and 100.");
+                    } else {
+                        studentGrades.replace(updateStudentId, newGrade);
+                        System.out.println("Grade updated successfully.");
+                    }
                 } else {
                     System.out.println("Student ID not found.");
                 }
