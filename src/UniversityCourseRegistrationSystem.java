@@ -15,6 +15,12 @@ public class UniversityCourseRegistrationSystem {
 
         // Ask for number of students
         System.out.print("Enter number of students: ");
+        while (!scanner.hasNextInt()) {
+            System.out.println("Invalid number of students.");
+            scanner.next();
+            System.out.print("Enter number of students: ");
+        }
+
         int numberOfStudents = scanner.nextInt();
         scanner.nextLine();
 
