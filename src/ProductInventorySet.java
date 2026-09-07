@@ -41,6 +41,11 @@ public class ProductInventorySet {
 
                 totalProductsEntered++;
 
+                if (productName.isEmpty()) {
+                    System.out.println("Product name cannot be empty.");
+                    continue;
+                }
+
                 // Add product to HashSet and check for duplicates
                 if (!productInventory.add(productName)) {
                     System.out.println("Product already exists. Duplicate entries are not allowed.");
