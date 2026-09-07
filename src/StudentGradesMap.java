@@ -55,6 +55,11 @@ public class StudentGradesMap {
 
                     studentGrade = input.nextDouble();
 
+                    if (studentGrade < 0 || studentGrade > 100) {
+                        System.out.println("Grade must be between 0 and 100.");
+                        continue;
+                    }
+
                     // Check if student ID already exists before adding
                     if (studentGrades.containsKey(studentId)) {
                         System.out.println("Student ID already exists. Record not added.");
