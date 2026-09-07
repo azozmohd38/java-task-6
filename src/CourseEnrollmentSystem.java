@@ -54,7 +54,7 @@ public class CourseEnrollmentSystem {
                 input.nextLine();
 
                 System.out.print("Enter course name: ");
-                courseName = input.next();
+                courseName = input.nextLine().trim();
 
                 totalStudentRecordsEntered++;
 
