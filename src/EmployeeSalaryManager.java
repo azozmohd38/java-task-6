@@ -143,11 +143,20 @@ public class EmployeeSalaryManager {
                         if (employeeSalaries.containsKey(searchEmployeeId)) {
 
                             System.out.print("Enter new salary: ");
+                            while (!input.hasNextDouble()) {
+                                System.out.println("Salary must be a number.");
+                                input.next();
+                                System.out.print("Enter new salary: ");
+                            }
+
                             newSalary = input.nextDouble();
 
-                            employeeSalaries.replace(searchEmployeeId, newSalary);
-
-                            System.out.println("Salary updated successfully.");
+                            if (newSalary < 0) {
+                                System.out.println("Salary cannot be negative.");
+                            } else {
+                                employeeSalaries.replace(searchEmployeeId, newSalary);
+                                System.out.println("Salary updated successfully.");
+                            }
                         } else {
                             System.out.println("Employee not found.");
                         }
