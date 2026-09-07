@@ -91,7 +91,6 @@ public class CityDirectorySet {
             System.out.println("Directory classification: " + directoryClassification);
         }
 
-        // Close Scanner before program ends
         input.close();
     }
 }
