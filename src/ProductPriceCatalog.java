@@ -88,12 +88,22 @@ public class ProductPriceCatalog {
 
                 if (updateChoice.equalsIgnoreCase("Y")) {
                     System.out.print("Enter new price: ");
+                    while (!input.hasNextDouble()) {
+                        System.out.println("Price must be a number.");
+                        input.next();
+                        System.out.print("Enter new price: ");
+                    }
+
                     newPrice = input.nextDouble();
+                    input.nextLine();
 
-                    // Update product price using replace()
-                    productCatalog.replace(searchProduct, newPrice);
-
-                    searchUpdateResult = "Price updated successfully.";
+                    if (newPrice < 0) {
+                        searchUpdateResult = "Price update skipped.";
+                    } else {
+                        // Update product price using replace()
+                        productCatalog.replace(searchProduct, newPrice);
+                        searchUpdateResult = "Price updated successfully.";
+                    }
                 } else {
                     searchUpdateResult = "Price update skipped.";
                 }
