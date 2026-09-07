@@ -43,7 +43,14 @@ public class ProductPriceCatalog {
                 productName = input.nextLine().trim();
 
                 System.out.print("Enter product price: ");
+                while (!input.hasNextDouble()) {
+                    System.out.println("Price must be a number.");
+                    input.next();
+                    System.out.print("Enter product price: ");
+                }
+
                 productPrice = input.nextDouble();
+                input.nextLine();
 
                 totalProductsEntered++;
 
