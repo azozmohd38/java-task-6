@@ -24,6 +24,12 @@ public class EmployeeSalaryManager {
 
         // Prompt user to enter number of employees
         System.out.print("Enter the number of employees: ");
+        while (!input.hasNextInt()) {
+            System.out.println("Invalid number of employees.");
+            input.next();
+            System.out.print("Enter the number of employees: ");
+        }
+
         numberOfEmployees = input.nextInt();
 
         // Validate number of employees
