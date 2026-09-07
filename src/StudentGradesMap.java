@@ -131,7 +131,6 @@ public class StudentGradesMap {
                 System.out.println("Class performance classification: " + performanceClassification);
             }
 
-            // Close Scanner before program ends
             input.close();
         }
 }
