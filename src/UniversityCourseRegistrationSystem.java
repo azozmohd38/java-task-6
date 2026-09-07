@@ -71,6 +71,11 @@ public class UniversityCourseRegistrationSystem {
             int numberOfCourses = scanner.nextInt();
             scanner.nextLine();
 
+            if (numberOfCourses < 0) {
+                System.out.println("Invalid number of courses.");
+                numberOfCourses = 0;
+            }
+
             HashSet<String> courses = new HashSet<>();
 
             // Read courses
