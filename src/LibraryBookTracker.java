@@ -113,7 +113,10 @@ public class LibraryBookTracker {
             for (int id : bookIds) {
                 System.out.println(id);
             }
-            System.out.println("All book IDs with their corresponding titles: " + bookCatalog);
+            System.out.println("All book IDs with their corresponding titles:");
+            for (int id : bookCatalog.keySet()) {
+                System.out.println(id + " - " + bookCatalog.get(id));
+            }
             System.out.println("Search result:\n" + searchResult);
             System.out.println("Library classification: " + libraryClassification);
         }
