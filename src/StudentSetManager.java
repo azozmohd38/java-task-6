@@ -5,7 +5,7 @@ public class StudentSetManager {
     public static void main(String[] args) {
 
         // Create Scanner object to read user input
-        Scanner scanner = new Scanner(System.in);
+        Scanner input = new Scanner(System.in);
 
         // Declare variables needed for the program
         int numberOfStudents;
@@ -18,7 +18,7 @@ public class StudentSetManager {
 
         // Prompt user to enter the number of student IDs
         System.out.print("Enter the number of student IDs to register: ");
-        numberOfStudents = scanner.nextInt();
+        numberOfStudents = input.nextInt();
 
         // Validate the entered number of students
         if (numberOfStudents <= 0) {
@@ -28,7 +28,7 @@ public class StudentSetManager {
             // Use a loop to read and store student IDs
             for (int i = 0; i < numberOfStudents; i++) {
                 System.out.print("Enter student ID: ");
-                studentId = scanner.next();
+                studentId = input.next();
 
                 totalIdsEntered++;
 
@@ -55,6 +55,6 @@ public class StudentSetManager {
         }
 
         // Close Scanner before program ends
-        scanner.close();
+        input.close();
     }
 }
