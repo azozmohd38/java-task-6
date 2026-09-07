@@ -54,6 +54,16 @@ public class ProductPriceCatalog {
 
                 totalProductsEntered++;
 
+                if (productName.isEmpty()) {
+                    System.out.println("Product name cannot be empty.");
+                    continue;
+                }
+
+                if (productPrice < 0) {
+                    System.out.println("Product price cannot be negative.");
+                    continue;
+                }
+
                 // Check if product already exists before adding
                 if (productCatalog.containsKey(productName)) {
                     System.out.println("Product already exists. Record not added.");
