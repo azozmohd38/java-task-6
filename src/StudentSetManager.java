@@ -62,6 +62,7 @@ public class StudentSetManager {
             }
 
             // Display registration results
+            System.out.println("\n===== Student Registration Summary =====");
             System.out.println("Total IDs entered: " + totalIdsEntered);
             System.out.println("Total unique student IDs: " + uniqueStudentCount);
             System.out.println("All unique student IDs: " + studentIds);
