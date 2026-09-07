@@ -26,7 +26,14 @@ public class CourseEnrollmentSystem {
 
         // Prompt user to enter the number of students
         System.out.print("Enter the number of students: ");
+        while (!input.hasNextInt()) {
+            System.out.println("Invalid number of students.");
+            input.next();
+            System.out.print("Enter the number of students: ");
+        }
+
         numberOfStudents = input.nextInt();
+        input.nextLine();
 
         // Validate the entered number of students
         if (numberOfStudents <= 0) {
