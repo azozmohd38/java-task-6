@@ -52,6 +52,11 @@ public class EmployeeDirectoryMap {
 
                 totalRecordsEntered++;
 
+                if (employeeName.isEmpty()) {
+                    System.out.println("Employee name cannot be empty.");
+                    continue;
+                }
+
                 // Check if employee ID already exists before adding
                 if (employeeDirectory.containsKey(employeeId)) {
                     System.out.println("Employee ID already exists. Please enter a unique ID.");
