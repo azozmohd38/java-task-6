@@ -10,6 +10,7 @@ public class EmployeeDirectoryMap {
         // Declare variables required for the program
         int numberOfEmployees;
         int totalRecordsEntered = 0;
+        int duplicateEmployeeIds = 0;
         int employeeId;
         int searchEmployeeId;
         String employeeName;
@@ -59,6 +60,7 @@ public class EmployeeDirectoryMap {
 
                 // Check if employee ID already exists before adding
                 if (employeeDirectory.containsKey(employeeId)) {
+                    duplicateEmployeeIds++;
                     System.out.println("Employee ID already exists. Please enter a unique ID.");
                 } else {
                     employeeDirectory.put(employeeId, employeeName);
