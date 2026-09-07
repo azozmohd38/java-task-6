@@ -58,6 +58,11 @@ public class EmployeeSalaryManager {
 
                 salary = input.nextDouble();
 
+                if (salary < 0) {
+                    System.out.println("Salary cannot be negative.");
+                    continue;
+                }
+
                 // Check if employee ID already exists
                 if (employeeSalaries.containsKey(employeeId)) {
                     System.out.println("Employee ID already exists. Record not added.");
