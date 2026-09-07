@@ -48,7 +48,7 @@ public class EmployeeDirectoryMap {
                 input.nextLine();
 
                 System.out.print("Enter employee name: ");
-                employeeName = input.next();
+                employeeName = input.nextLine().trim();
 
                 totalRecordsEntered++;
 
