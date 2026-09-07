@@ -87,6 +87,12 @@ public class StudentAttendanceManager {
                 System.out.println("7. Exit");
                 System.out.print("Enter your choice: ");
 
+                while (!input.hasNextInt()) {
+                    System.out.println("Invalid choice.");
+                    input.next();
+                    System.out.print("Enter your choice: ");
+                }
+
                 menuChoice = input.nextInt();
 
                 // Process menu options using switch-case
