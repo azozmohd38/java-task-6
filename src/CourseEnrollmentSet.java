@@ -56,7 +56,7 @@ public class CourseEnrollmentSet {
 
             // Prompt user to enter a course to remove
             System.out.print("Enter course name to remove: ");
-            courseToRemove = input.next();
+            courseToRemove = input.nextLine().trim();
 
             // Remove course using remove() method
             if (courseCatalog.remove(courseToRemove)) {
