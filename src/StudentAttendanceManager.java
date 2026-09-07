@@ -226,8 +226,8 @@ public class StudentAttendanceManager {
                                     + attendanceRecords.size());
                             System.out.println("Total attendance days: "
                                     + totalAttendanceDays);
-                            System.out.println("Average attendance: "
-                                    + averageAttendance);
+                            System.out.printf("Average attendance: %.2f%n",
+                                    averageAttendance);
                             System.out.println("Student with highest attendance: "
                                     + highestAttendanceStudentId
                                     + " (" + highestAttendance + " days)");
