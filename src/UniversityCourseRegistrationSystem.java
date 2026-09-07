@@ -62,6 +62,12 @@ public class UniversityCourseRegistrationSystem {
             studentIds.add(studentId);
 
             System.out.print("Enter number of courses: ");
+            while (!scanner.hasNextInt()) {
+                System.out.println("Invalid number of courses.");
+                scanner.next();
+                System.out.print("Enter number of courses: ");
+            }
+
             int numberOfCourses = scanner.nextInt();
             scanner.nextLine();
 
