@@ -221,7 +221,7 @@ public class EmployeeSalaryManager {
 
                     case 7:
                         // Exit program
-                        System.out.println("Exiting system...");
+                        System.out.println("Program terminated.");
                         break;
 
                     default:
@@ -231,7 +231,6 @@ public class EmployeeSalaryManager {
             } while (menuChoice != 7);
         }
 
-        // Close Scanner before program ends
         input.close();
     }
 }
