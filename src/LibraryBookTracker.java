@@ -11,6 +11,7 @@ public class LibraryBookTracker {
         // Declare variables required for the program
         int numberOfBooks;
         int totalBookRecordsEntered = 0;
+        int duplicateBookIds = 0;
         int bookId;
         int searchBookId;
         String bookTitle;
@@ -64,6 +65,7 @@ public class LibraryBookTracker {
 
                 // Check if book ID already exists in the HashSet
                 if (bookIds.contains(bookId)) {
+                    duplicateBookIds++;
                     System.out.println("Duplicate Book ID. Record not added.");
                 } else {
 
