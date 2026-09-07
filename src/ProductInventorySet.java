@@ -20,7 +20,14 @@ public class ProductInventorySet {
 
         // Prompt user to enter the number of products
         System.out.print("Enter the number of products: ");
+        while (!input.hasNextInt()) {
+            System.out.println("Invalid number of products.");
+            input.next();
+            System.out.print("Enter the number of products: ");
+        }
+
         numberOfProducts = input.nextInt();
+        input.nextLine();
 
         // Validate the entered number of products
         if (numberOfProducts <= 0) {
