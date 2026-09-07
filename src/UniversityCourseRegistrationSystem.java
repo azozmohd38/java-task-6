@@ -335,9 +335,14 @@ public class UniversityCourseRegistrationSystem {
                 case 7:
 
                     System.out.print("Enter course name: ");
-                    String searchCourse = scanner.nextLine();
+                    String searchCourse = scanner.nextLine().trim();
 
                     boolean found = false;
+
+                    if (searchCourse.isEmpty()) {
+                        System.out.println("No students found.");
+                        break;
+                    }
 
                     System.out.println("Students registered in " + searchCourse + ":");
 
