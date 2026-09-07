@@ -131,6 +131,7 @@ public class ProductPriceCatalog {
             System.out.println("Duplicate products: " + duplicateProducts);
             System.out.println("Search and update result: " + searchUpdateResult);
             System.out.println("Inventory classification: " + inventoryClassification);
+            System.out.println("Product catalog check completed.");
         }
 
         input.close();
