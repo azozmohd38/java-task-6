@@ -53,7 +53,7 @@ public class LibraryBookTracker {
                 input.nextLine();
 
                 System.out.print("Enter book title: ");
-                bookTitle = input.next();
+                bookTitle = input.nextLine().trim();
 
                 totalBookRecordsEntered++;
 
