@@ -10,6 +10,7 @@ public class CityDirectorySet {
         // Declare variables required for the program
         int numberOfCities;
         int totalCitiesEntered = 0;
+        int duplicateCities = 0;
         String cityName;
         String searchCity;
         String searchResult;
@@ -48,6 +49,7 @@ public class CityDirectorySet {
 
                 // Add city to TreeSet and check for duplicates
                 if (!cityDirectory.add(cityName)) {
+                    duplicateCities++;
                     System.out.println("City already exists. Duplicate entries are not allowed.");
                 }
             }
