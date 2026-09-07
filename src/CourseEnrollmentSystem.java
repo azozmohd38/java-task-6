@@ -121,7 +121,11 @@ public class CourseEnrollmentSystem {
             for (int id : studentIds) {
                 System.out.println(id);
             }
-            System.out.println("All student IDs with their enrolled courses: " + studentCourses);
+            System.out.println("All student IDs with their enrolled courses:");
+            for (int id : studentCourses.keySet()) {
+                System.out.println(id + " - " + studentCourses.get(id));
+            }
+            System.out.println("Duplicate student IDs: " + duplicateStudentIds);
             System.out.println("Update result: " + updateResult);
             System.out.println("Enrollment classification: " + enrollmentClassification);
         }
