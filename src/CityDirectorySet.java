@@ -20,7 +20,14 @@ public class CityDirectorySet {
 
         // Prompt user to enter the number of cities
         System.out.print("Enter the number of cities: ");
+        while (!input.hasNextInt()) {
+            System.out.println("Invalid number of cities.");
+            input.next();
+            System.out.print("Enter the number of cities: ");
+        }
+
         numberOfCities = input.nextInt();
+        input.nextLine();
 
         // Validate the entered number of cities
         if (numberOfCities <= 0) {
