@@ -77,6 +77,12 @@ public class LibraryBookTracker {
 
             // Prompt user to search for a book ID
             System.out.print("Enter book ID to search: ");
+            while (!input.hasNextInt()) {
+                System.out.println("Book not found.");
+                input.next();
+                System.out.print("Enter book ID to search: ");
+            }
+
             searchBookId = input.nextInt();
 
             // Search for book using HashMap
