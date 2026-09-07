@@ -67,10 +67,12 @@ public class CourseEnrollmentSet {
                 removalResult = "Course not found.";
             }
 
+            int remainingCourseCount = courseCatalog.size();
+
             // Classify course catalog based on remaining courses
-            if (courseCatalog.size() < 4) {
+            if (remainingCourseCount < 4) {
                 catalogClassification = "Small Course Catalog";
-            } else if (courseCatalog.size() <= 8) {
+            } else if (remainingCourseCount <= 8) {
                 catalogClassification = "Medium Course Catalog";
             } else {
                 catalogClassification = "Large Course Catalog";
