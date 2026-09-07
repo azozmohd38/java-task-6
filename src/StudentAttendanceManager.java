@@ -27,6 +27,12 @@ public class StudentAttendanceManager {
 
         // Prompt user to enter the number of student records
         System.out.print("Enter the number of student records: ");
+        while (!input.hasNextInt()) {
+            System.out.println("Invalid number of students.");
+            input.next();
+            System.out.print("Enter the number of student records: ");
+        }
+
         numberOfStudents = input.nextInt();
 
         // Check if number of students is valid
