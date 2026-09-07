@@ -89,7 +89,9 @@ public class UniversityCourseRegistrationSystem {
                 System.out.print("Enter course " + j + ": ");
                 String course = scanner.nextLine().trim();
 
-                if (courses.add(course)) {
+                if (course.isEmpty()) {
+                    System.out.println("Course name cannot be empty.");
+                } else if (courses.add(course)) {
                     System.out.println("Course added.");
                 } else {
                     System.out.println("Duplicate course. Not added.");
