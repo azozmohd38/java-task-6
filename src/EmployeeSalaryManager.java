@@ -104,10 +104,20 @@ public class EmployeeSalaryManager {
                             System.out.println("Employee ID already exists. Record not added.");
                         } else {
                             System.out.print("Enter employee salary: ");
+                            while (!input.hasNextDouble()) {
+                                System.out.println("Salary must be a number.");
+                                input.next();
+                                System.out.print("Enter employee salary: ");
+                            }
+
                             salary = input.nextDouble();
 
-                            employeeSalaries.put(employeeId, salary);
-                            System.out.println("Employee added successfully.");
+                            if (salary < 0) {
+                                System.out.println("Salary cannot be negative.");
+                            } else {
+                                employeeSalaries.put(employeeId, salary);
+                                System.out.println("Employee added successfully.");
+                            }
                         }
                         break;
 
